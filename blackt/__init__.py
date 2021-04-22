@@ -12,8 +12,7 @@ import tokenize
 import traceback
 from abc import ABC, abstractmethod
 from collections import defaultdict
-from concurrent.futures import (Executor, ProcessPoolExecutor,
-                                ThreadPoolExecutor)
+from concurrent.futures import Executor, ProcessPoolExecutor, ThreadPoolExecutor
 from contextlib import contextmanager
 from dataclasses import dataclass, field, replace
 from datetime import datetime
@@ -21,9 +20,28 @@ from enum import Enum
 from functools import lru_cache, partial, wraps
 from multiprocessing import Manager, freeze_support
 from pathlib import Path
-from typing import (TYPE_CHECKING, Any, Callable, Collection, Dict, Generator,
-                    Generic, Iterable, Iterator, List, Optional, Pattern,
-                    Sequence, Set, Sized, Tuple, Type, TypeVar, Union, cast)
+from typing import (
+	TYPE_CHECKING,
+	Any,
+	Callable,
+	Collection,
+	Dict,
+	Generator,
+	Generic,
+	Iterable,
+	Iterator,
+	List,
+	Optional,
+	Pattern,
+	Sequence,
+	Set,
+	Sized,
+	Tuple,
+	Type,
+	TypeVar,
+	Union,
+	cast,
+)
 
 import click
 import regex as re
@@ -49,6 +67,7 @@ from blib2to3 import pygram, pytree
 from blib2to3.pgen2 import driver, token
 from blib2to3.pgen2.grammar import Grammar
 from blib2to3.pgen2.parse import ParseError
+
 # lib2to3 fork
 from blib2to3.pytree import Leaf, Node, type_repr
 from pathspec import PathSpec
@@ -62,7 +81,7 @@ if TYPE_CHECKING:
 	import colorama  # noqa: F401
 
 DEFAULT_LINE_LENGTH = 88
-DEFAULT_EXCLUDES = r"/(\.direnv|\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|\.svn|_build|buck-out|build|dist)/"  # noqa: B950
+DEFAULT_EXCLUDES = r"/(\.direnv|\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|venv|\.svn|_build|buck-out|build|dist)/"  # noqa: B950
 DEFAULT_INCLUDES = r"\.pyi?$"
 CACHE_DIR = Path(user_cache_dir("black", version=__version__))
 STDIN_PLACEHOLDER = "__BLACK_STDIN_FILENAME__"
@@ -282,7 +301,7 @@ def supports_feature(target_versions: Set[TargetVersion], feature: Feature) -> b
 	return all(feature in VERSION_TO_FEATURES[version] for version in target_versions)
 
 
-def find_pyproject_toml(path_search_start: Iterable[str]) -> Optional[str]:
+def find_pyproject_toml(path_search_start: Tuple[str, ...]) -> Optional[str]:
 	"""Find the absolute filepath to a pyproject.toml if it exists"""
 	path_project_root = find_project_root(path_search_start)
 	path_pyproject_toml = path_project_root / "pyproject.toml"
@@ -764,7 +783,7 @@ def reformat_many(
 	except (ImportError, OSError):
 		# we arrive here if the underlying system does not support multi-processing
 		# like in AWS Lambda or Termux, in which case we gracefully fallback to
-		# a ThreadPollExecutor with just a single worker (more workers would not do us
+		# a ThreadPoolExecutor with just a single worker (more workers would not do us
 		# any good due to the Global Interpreter Lock)
 		executor = ThreadPoolExecutor(max_workers=1)
 
@@ -827,7 +846,7 @@ async def schedule_formatting(
 		): src
 		for src in sorted(sources)
 	}
-	pending: Iterable["asyncio.Future[bool]"] = tasks.keys()
+	pending = tasks.keys()
 	try:
 		loop.add_signal_handler(signal.SIGINT, cancel, pending)
 		loop.add_signal_handler(signal.SIGTERM, cancel, pending)
@@ -2689,6 +2708,13 @@ def make_comment(content: str) -> str:
 
 	if content[0] == "#":
 		content = content[1:]
+	NON_BREAKING_SPACE = " "
+	if (
+		content
+		and content[0] == NON_BREAKING_SPACE
+		and not content.lstrip().startswith("type:")
+	):
+		content = " " + content[1:]  # Replace NBSP by a simple space
 	if content and content[0] not in " !:#'%":
 		content = " " + content
 	return "#" + content
@@ -4185,7 +4211,10 @@ class StringParenWrapper(CustomSplitMapMixin, BaseStringSplitter):
 		# contains either the "return" or "yield" keywords...
 		if parent_type(LL[0]) in [syms.return_stmt, syms.yield_expr] and LL[
 			0
-		].value in ["return", "yield"]:
+		].value in [
+			"return",
+			"yield",
+		]:
 			is_valid_index = is_valid_index_factory(LL)
 
 			idx = 2 if is_valid_index(1) and is_empty_par(LL[1]) else 1
@@ -6194,7 +6223,7 @@ def gen_python_files(
 
 
 @lru_cache()
-def find_project_root(srcs: Iterable[str]) -> Path:
+def find_project_root(srcs: Tuple[str, ...]) -> Path:
 	"""Return a directory containing .git, .hg, or pyproject.toml.
 
 	That directory will be a common parent of all files and directories

@@ -9,7 +9,7 @@
 [![PyPI Version](https://img.shields.io/pypi/v/blackt.svg?style=for-the-badge)](https://pypi.org/project/blackt)
 
 <!-- omit in toc -->
-# blackt
+# BlackT
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
@@ -166,7 +166,7 @@ For more info see https://github.com/psf/black/blob/master/README.md
 
 ## Changes (to upstream)
 
-See [changes.diff](/changes.diff) for the changes to https://github.com/psf/black/tree/9cbf1f162261b64ebb150639b608be0c38f23e2b
+See [changes.diff](/changes.diff) for the changes to https://github.com/psf/black/tree/7b4ca4bd90c148d72548048f5109537a555aaf77
 
 ## Docs
 See the [Docs](/DOCS/) for more information.

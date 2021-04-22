@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "blackt"
-version = "2021a3"
+version = "2021a4"
 description = ""
 authors = ["FredHappyface"]
 classifiers = [

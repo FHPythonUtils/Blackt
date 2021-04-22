@@ -24,9 +24,7 @@ def Line__str__patch(self) -> str:
 	return res + "\n"
 
 
-def is_line_short_enough_patch(
-	line: black.Line, *, line_length: int, line_str: str = ""
-) -> bool:
+def is_line_short_enough_patch(line: black.Line, *, line_length: int, line_str: str = "") -> bool:
 	"""Return True if `line` is no longer than `line_length`.
 
 	Uses the provided `line_str` rendering, if any, otherwise computes a new one.

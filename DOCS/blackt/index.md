@@ -257,7 +257,7 @@
 
 ## BaseStringSplitter
 
-[[find in source code]](../../blackt/__init__.py#L3464)
+[[find in source code]](../../blackt/__init__.py#L3490)
 
 ```python
 class BaseStringSplitter(StringTransformer):
@@ -288,7 +288,7 @@ Requirements:
 
 ### BaseStringSplitter().__get_max_string_length
 
-[[find in source code]](../../blackt/__init__.py#L3552)
+[[find in source code]](../../blackt/__init__.py#L3578)
 
 ```python
 def __get_max_string_length(line: Line, string_idx: int) -> int:
@@ -314,7 +314,7 @@ for causing this line to exceed the line length limit.
 
 ### BaseStringSplitter().__validate
 
-[[find in source code]](../../blackt/__init__.py#L3509)
+[[find in source code]](../../blackt/__init__.py#L3535)
 
 ```python
 def __validate(line: Line, string_idx: int) -> TResult[None]:
@@ -336,7 +336,7 @@ description of those requirements.
 
 ### BaseStringSplitter().do_match
 
-[[find in source code]](../../blackt/__init__.py#L3497)
+[[find in source code]](../../blackt/__init__.py#L3523)
 
 ```python
 def do_match(line: Line) -> TMatchResult:
@@ -349,7 +349,7 @@ def do_match(line: Line) -> TMatchResult:
 
 ### BaseStringSplitter().do_splitter_match
 
-[[find in source code]](../../blackt/__init__.py#L3486)
+[[find in source code]](../../blackt/__init__.py#L3512)
 
 ```python
 @abstractmethod
@@ -370,7 +370,7 @@ Refer to `help(StringTransformer.do_match)` for more information.
 
 ## BracketMatchError
 
-[[find in source code]](../../blackt/__init__.py#L113)
+[[find in source code]](../../blackt/__init__.py#L132)
 
 ```python
 class BracketMatchError(KeyError):
@@ -380,7 +380,7 @@ Raised when an opening bracket is unable to be matched to a closing bracket.
 
 ## BracketTracker
 
-[[find in source code]](../../blackt/__init__.py#L1337)
+[[find in source code]](../../blackt/__init__.py#L1356)
 
 ```python
 dataclass
@@ -391,7 +391,7 @@ Keeps track of brackets on a line.
 
 ### BracketTracker().any_open_brackets
 
-[[find in source code]](../../blackt/__init__.py#L1398)
+[[find in source code]](../../blackt/__init__.py#L1417)
 
 ```python
 def any_open_brackets() -> bool:
@@ -401,7 +401,7 @@ Return True if there is an yet unmatched open bracket on the line.
 
 ### BracketTracker().delimiter_count_with_priority
 
-[[find in source code]](../../blackt/__init__.py#L1410)
+[[find in source code]](../../blackt/__init__.py#L1429)
 
 ```python
 def delimiter_count_with_priority(priority: Priority = 0) -> int:
@@ -417,7 +417,7 @@ If no `priority` is passed, defaults to max priority on the line.
 
 ### BracketTracker().get_open_lsqb
 
-[[find in source code]](../../blackt/__init__.py#L1474)
+[[find in source code]](../../blackt/__init__.py#L1493)
 
 ```python
 def get_open_lsqb() -> Optional[Leaf]:
@@ -427,7 +427,7 @@ Return the most recent opening square bracket (if any).
 
 ### BracketTracker().mark
 
-[[find in source code]](../../blackt/__init__.py#L1348)
+[[find in source code]](../../blackt/__init__.py#L1367)
 
 ```python
 def mark(leaf: Leaf) -> None:
@@ -449,7 +449,7 @@ needed) and it's on depth 0, its `id()` is stored in the tracker's
 
 ### BracketTracker().max_delimiter_priority
 
-[[find in source code]](../../blackt/__init__.py#L1402)
+[[find in source code]](../../blackt/__init__.py#L1421)
 
 ```python
 def max_delimiter_priority(exclude: Iterable[LeafID] = ()) -> Priority:
@@ -466,7 +466,7 @@ Raises ValueError on no delimiters.
 
 ### BracketTracker().maybe_decrement_after_for_loop_variable
 
-[[find in source code]](../../blackt/__init__.py#L1434)
+[[find in source code]](../../blackt/__init__.py#L1453)
 
 ```python
 def maybe_decrement_after_for_loop_variable(leaf: Leaf) -> bool:
@@ -476,7 +476,7 @@ See [BracketTracker().maybe_increment_for_loop_variable](#brackettrackermaybe_in
 
 ### BracketTracker().maybe_decrement_after_lambda_arguments
 
-[[find in source code]](../../blackt/__init__.py#L1461)
+[[find in source code]](../../blackt/__init__.py#L1480)
 
 ```python
 def maybe_decrement_after_lambda_arguments(leaf: Leaf) -> bool:
@@ -486,7 +486,7 @@ See [BracketTracker().maybe_increment_lambda_arguments](#brackettrackermaybe_inc
 
 ### BracketTracker().maybe_increment_for_loop_variable
 
-[[find in source code]](../../blackt/__init__.py#L1421)
+[[find in source code]](../../blackt/__init__.py#L1440)
 
 ```python
 def maybe_increment_for_loop_variable(leaf: Leaf) -> bool:
@@ -499,7 +499,7 @@ tokens between `for` and `in`.
 
 ### BracketTracker().maybe_increment_lambda_arguments
 
-[[find in source code]](../../blackt/__init__.py#L1448)
+[[find in source code]](../../blackt/__init__.py#L1467)
 
 ```python
 def maybe_increment_lambda_arguments(leaf: Leaf) -> bool:
@@ -512,7 +512,7 @@ tokens between `lambda` and `:`.
 
 ## CannotSplit
 
-[[find in source code]](../../blackt/__init__.py#L105)
+[[find in source code]](../../blackt/__init__.py#L124)
 
 ```python
 class CannotSplit(CannotTransform):
@@ -526,7 +526,7 @@ A readable split that fits the allotted line length is impossible.
 
 ## CannotTransform
 
-[[find in source code]](../../blackt/__init__.py#L101)
+[[find in source code]](../../blackt/__init__.py#L120)
 
 ```python
 class CannotTransform(Exception):
@@ -536,7 +536,7 @@ Base class for errors raised by Transformers.
 
 ## Changed
 
-[[find in source code]](../../blackt/__init__.py#L165)
+[[find in source code]](../../blackt/__init__.py#L184)
 
 ```python
 class Changed(Enum):
@@ -544,7 +544,7 @@ class Changed(Enum):
 
 ## CustomSplit
 
-[[find in source code]](../../blackt/__init__.py#L2906)
+[[find in source code]](../../blackt/__init__.py#L2932)
 
 ```python
 dataclass
@@ -575,7 +575,7 @@ CustomSplit(True, 16)
 
 ## CustomSplitMapMixin
 
-[[find in source code]](../../blackt/__init__.py#L2931)
+[[find in source code]](../../blackt/__init__.py#L2957)
 
 ```python
 class CustomSplitMapMixin():
@@ -587,7 +587,7 @@ the resultant substrings go over the configured max line length.
 
 ### CustomSplitMapMixin().add_custom_splits
 
-[[find in source code]](../../blackt/__init__.py#L2950)
+[[find in source code]](../../blackt/__init__.py#L2976)
 
 ```python
 def add_custom_splits(
@@ -603,7 +603,7 @@ Side Effects:
 
 ### CustomSplitMapMixin().has_custom_splits
 
-[[find in source code]](../../blackt/__init__.py#L2981)
+[[find in source code]](../../blackt/__init__.py#L3007)
 
 ```python
 def has_custom_splits(string: str) -> bool:
@@ -615,7 +615,7 @@ True iff @string is associated with a set of custom splits.
 
 ### CustomSplitMapMixin().pop_custom_splits
 
-[[find in source code]](../../blackt/__init__.py#L2961)
+[[find in source code]](../../blackt/__init__.py#L2987)
 
 ```python
 def pop_custom_splits(string: str) -> List[CustomSplit]:
@@ -636,7 +636,7 @@ Side Effects:
 
 ## DebugVisitor
 
-[[find in source code]](../../blackt/__init__.py#L1189)
+[[find in source code]](../../blackt/__init__.py#L1208)
 
 ```python
 dataclass
@@ -645,7 +645,7 @@ class DebugVisitor(Visitor[T]):
 
 ### DebugVisitor.show
 
-[[find in source code]](../../blackt/__init__.py#L1212)
+[[find in source code]](../../blackt/__init__.py#L1231)
 
 ```python
 @classmethod
@@ -658,7 +658,7 @@ Convenience method for debugging.
 
 ### DebugVisitor().visit_default
 
-[[find in source code]](../../blackt/__init__.py#L1192)
+[[find in source code]](../../blackt/__init__.py#L1211)
 
 ```python
 def visit_default(node: LN) -> Iterator[T]:
@@ -670,7 +670,7 @@ def visit_default(node: LN) -> Iterator[T]:
 
 ## EmptyLineTracker
 
-[[find in source code]](../../blackt/__init__.py#L1828)
+[[find in source code]](../../blackt/__init__.py#L1847)
 
 ```python
 dataclass
@@ -686,7 +686,7 @@ are consumed by `maybe_empty_lines()` and included in the computation.
 
 ### EmptyLineTracker().maybe_empty_lines
 
-[[find in source code]](../../blackt/__init__.py#L1842)
+[[find in source code]](../../blackt/__init__.py#L1861)
 
 ```python
 def maybe_empty_lines(current_line: Line) -> Tuple[(int, int)]:
@@ -703,7 +703,7 @@ lines (two on module-level).
 
 ## Err
 
-[[find in source code]](../../blackt/__init__.py#L129)
+[[find in source code]](../../blackt/__init__.py#L148)
 
 ```python
 class Err(Generic[E]):
@@ -716,7 +716,7 @@ class Err(Generic[E]):
 
 ### Err().err
 
-[[find in source code]](../../blackt/__init__.py#L133)
+[[find in source code]](../../blackt/__init__.py#L152)
 
 ```python
 def err() -> E:
@@ -728,7 +728,7 @@ def err() -> E:
 
 ## Feature
 
-[[find in source code]](../../blackt/__init__.py#L185)
+[[find in source code]](../../blackt/__init__.py#L204)
 
 ```python
 class Feature(Enum):
@@ -742,7 +742,7 @@ class Feature(Enum):
 
 ## InvalidInput
 
-[[find in source code]](../../blackt/__init__.py#L109)
+[[find in source code]](../../blackt/__init__.py#L128)
 
 ```python
 class InvalidInput(ValueError):
@@ -752,7 +752,7 @@ Raised when input source code fails all parse attempts.
 
 ## Line
 
-[[find in source code]](../../blackt/__init__.py#L1480)
+[[find in source code]](../../blackt/__init__.py#L1499)
 
 ```python
 dataclass
@@ -763,7 +763,7 @@ Holds leaves and comments. Can be printed with `str(line)`.
 
 ### Line().\_\_bool\_\_
 
-[[find in source code]](../../blackt/__init__.py#L1822)
+[[find in source code]](../../blackt/__init__.py#L1841)
 
 ```python
 def __bool__() -> bool:
@@ -773,7 +773,7 @@ Return True if the line has leaves or comments.
 
 ### Line().\_\_str\_\_
 
-[[find in source code]](../../blackt/__init__.py#L1806)
+[[find in source code]](../../blackt/__init__.py#L1825)
 
 ```python
 def __str__() -> str:
@@ -783,7 +783,7 @@ Render the line.
 
 ### Line().append
 
-[[find in source code]](../../blackt/__init__.py#L1493)
+[[find in source code]](../../blackt/__init__.py#L1512)
 
 ```python
 def append(leaf: Leaf, preformatted: bool = False) -> None:
@@ -800,7 +800,7 @@ Inline comments are put aside.
 
 ### Line().append_comment
 
-[[find in source code]](../../blackt/__init__.py#L1730)
+[[find in source code]](../../blackt/__init__.py#L1749)
 
 ```python
 def append_comment(comment: Leaf) -> bool:
@@ -810,7 +810,7 @@ Add an inline or standalone comment to the line.
 
 ### Line().append_safe
 
-[[find in source code]](../../blackt/__init__.py#L1525)
+[[find in source code]](../../blackt/__init__.py#L1544)
 
 ```python
 def append_safe(leaf: Leaf, preformatted: bool = False) -> None:
@@ -823,7 +823,7 @@ or when a standalone comment is not the first leaf on the line.
 
 ### Line().clone
 
-[[find in source code]](../../blackt/__init__.py#L1797)
+[[find in source code]](../../blackt/__init__.py#L1816)
 
 ```python
 def clone() -> 'Line':
@@ -831,7 +831,7 @@ def clone() -> 'Line':
 
 ### Line().comments_after
 
-[[find in source code]](../../blackt/__init__.py#L1767)
+[[find in source code]](../../blackt/__init__.py#L1786)
 
 ```python
 def comments_after(leaf: Leaf) -> List[Leaf]:
@@ -841,7 +841,7 @@ Generate comments that should appear directly after `leaf`.
 
 ### Line().contains_multiline_strings
 
-[[find in source code]](../../blackt/__init__.py#L1694)
+[[find in source code]](../../blackt/__init__.py#L1713)
 
 ```python
 def contains_multiline_strings() -> bool:
@@ -849,7 +849,7 @@ def contains_multiline_strings() -> bool:
 
 ### Line().contains_standalone_comments
 
-[[find in source code]](../../blackt/__init__.py#L1617)
+[[find in source code]](../../blackt/__init__.py#L1636)
 
 ```python
 def contains_standalone_comments(depth_limit: int = sys.maxsize) -> bool:
@@ -859,7 +859,7 @@ If so, needs to be split before emitting.
 
 ### Line().contains_uncollapsable_type_comments
 
-[[find in source code]](../../blackt/__init__.py#L1625)
+[[find in source code]](../../blackt/__init__.py#L1644)
 
 ```python
 def contains_uncollapsable_type_comments() -> bool:
@@ -867,7 +867,7 @@ def contains_uncollapsable_type_comments() -> bool:
 
 ### Line().contains_unsplittable_type_ignore
 
-[[find in source code]](../../blackt/__init__.py#L1661)
+[[find in source code]](../../blackt/__init__.py#L1680)
 
 ```python
 def contains_unsplittable_type_ignore() -> bool:
@@ -875,7 +875,7 @@ def contains_unsplittable_type_ignore() -> bool:
 
 ### Line().has_magic_trailing_comma
 
-[[find in source code]](../../blackt/__init__.py#L1697)
+[[find in source code]](../../blackt/__init__.py#L1716)
 
 ```python
 def has_magic_trailing_comma(
@@ -892,7 +892,7 @@ Additionally, if ensure_removable:
 
 ### Line().is_class
 
-[[find in source code]](../../blackt/__init__.py#L1557)
+[[find in source code]](../../blackt/__init__.py#L1576)
 
 ```python
 @property
@@ -903,7 +903,7 @@ Is this line a class definition?
 
 ### Line().is_class_paren_empty
 
-[[find in source code]](../../blackt/__init__.py#L1592)
+[[find in source code]](../../blackt/__init__.py#L1611)
 
 ```python
 @property
@@ -916,7 +916,7 @@ Those are unnecessary and should be removed.
 
 ### Line().is_comment
 
-[[find in source code]](../../blackt/__init__.py#L1542)
+[[find in source code]](../../blackt/__init__.py#L1561)
 
 ```python
 @property
@@ -927,7 +927,7 @@ Is this line a standalone comment?
 
 ### Line().is_complex_subscript
 
-[[find in source code]](../../blackt/__init__.py#L1779)
+[[find in source code]](../../blackt/__init__.py#L1798)
 
 ```python
 def is_complex_subscript(leaf: Leaf) -> bool:
@@ -937,7 +937,7 @@ Return True iff `leaf` is part of a slice with non-trivial exprs.
 
 ### Line().is_decorator
 
-[[find in source code]](../../blackt/__init__.py#L1547)
+[[find in source code]](../../blackt/__init__.py#L1566)
 
 ```python
 @property
@@ -948,7 +948,7 @@ Is this line a decorator?
 
 ### Line().is_def
 
-[[find in source code]](../../blackt/__init__.py#L1573)
+[[find in source code]](../../blackt/__init__.py#L1592)
 
 ```python
 @property
@@ -959,7 +959,7 @@ Is this a function definition? (Also returns True for async defs.)
 
 ### Line().is_import
 
-[[find in source code]](../../blackt/__init__.py#L1552)
+[[find in source code]](../../blackt/__init__.py#L1571)
 
 ```python
 @property
@@ -970,7 +970,7 @@ Is this an import line?
 
 ### Line().is_stub_class
 
-[[find in source code]](../../blackt/__init__.py#L1566)
+[[find in source code]](../../blackt/__init__.py#L1585)
 
 ```python
 @property
@@ -981,7 +981,7 @@ Is this line a class definition with a body consisting only of "..."?
 
 ### Line().is_triple_quoted_string
 
-[[find in source code]](../../blackt/__init__.py#L1608)
+[[find in source code]](../../blackt/__init__.py#L1627)
 
 ```python
 @property
@@ -992,7 +992,7 @@ Is the line a triple quoted string?
 
 ### Line().remove_trailing_comma
 
-[[find in source code]](../../blackt/__init__.py#L1771)
+[[find in source code]](../../blackt/__init__.py#L1790)
 
 ```python
 def remove_trailing_comma() -> None:
@@ -1002,7 +1002,7 @@ Remove the trailing comma and moves the comments attached to it.
 
 ## LineGenerator
 
-[[find in source code]](../../blackt/__init__.py#L1952)
+[[find in source code]](../../blackt/__init__.py#L1971)
 
 ```python
 dataclass
@@ -1016,7 +1016,7 @@ in ways that will no longer stringify to valid Python code on the tree.
 
 ### LineGenerator().\_\_post\_init\_\_
 
-[[find in source code]](../../blackt/__init__.py#L2149)
+[[find in source code]](../../blackt/__init__.py#L2168)
 
 ```python
 def __post_init__() -> None:
@@ -1026,7 +1026,7 @@ You are in a twisty little maze of passages.
 
 ### LineGenerator().line
 
-[[find in source code]](../../blackt/__init__.py#L1963)
+[[find in source code]](../../blackt/__init__.py#L1982)
 
 ```python
 def line(indent: int = 0) -> Iterator[Line]:
@@ -1041,7 +1041,7 @@ If any lines were generated, set up a new current_line.
 
 ### LineGenerator().visit_DEDENT
 
-[[find in source code]](../../blackt/__init__.py#L2015)
+[[find in source code]](../../blackt/__init__.py#L2034)
 
 ```python
 def visit_DEDENT(node: Leaf) -> Iterator[Line]:
@@ -1051,7 +1051,7 @@ Decrease indentation level, maybe yield a line.
 
 ### LineGenerator().visit_ENDMARKER
 
-[[find in source code]](../../blackt/__init__.py#L2104)
+[[find in source code]](../../blackt/__init__.py#L2123)
 
 ```python
 def visit_ENDMARKER(leaf: Leaf) -> Iterator[Line]:
@@ -1061,7 +1061,7 @@ End of file. Process outstanding comments and end with a newline.
 
 ### LineGenerator().visit_INDENT
 
-[[find in source code]](../../blackt/__init__.py#L2009)
+[[find in source code]](../../blackt/__init__.py#L2028)
 
 ```python
 def visit_INDENT(node: Leaf) -> Iterator[Line]:
@@ -1071,7 +1071,7 @@ Increase indentation level, maybe yield a line.
 
 ### LineGenerator().visit_SEMI
 
-[[find in source code]](../../blackt/__init__.py#L2100)
+[[find in source code]](../../blackt/__init__.py#L2119)
 
 ```python
 def visit_SEMI(leaf: Leaf) -> Iterator[Line]:
@@ -1081,7 +1081,7 @@ Remove a semicolon and put the other statement on a separate line.
 
 ### LineGenerator().visit_STANDALONE_COMMENT
 
-[[find in source code]](../../blackt/__init__.py#L2109)
+[[find in source code]](../../blackt/__init__.py#L2128)
 
 ```python
 def visit_STANDALONE_COMMENT(leaf: Leaf) -> Iterator[Line]:
@@ -1089,7 +1089,7 @@ def visit_STANDALONE_COMMENT(leaf: Leaf) -> Iterator[Line]:
 
 ### LineGenerator().visit_STRING
 
-[[find in source code]](../../blackt/__init__.py#L2131)
+[[find in source code]](../../blackt/__init__.py#L2150)
 
 ```python
 def visit_STRING(leaf: Leaf) -> Iterator[Line]:
@@ -1097,7 +1097,7 @@ def visit_STRING(leaf: Leaf) -> Iterator[Line]:
 
 ### LineGenerator().visit_async_stmt
 
-[[find in source code]](../../blackt/__init__.py#L2079)
+[[find in source code]](../../blackt/__init__.py#L2098)
 
 ```python
 def visit_async_stmt(node: Node) -> Iterator[Line]:
@@ -1107,7 +1107,7 @@ Visit `async def`, `async for`, `async with`.
 
 ### LineGenerator().visit_decorators
 
-[[find in source code]](../../blackt/__init__.py#L2094)
+[[find in source code]](../../blackt/__init__.py#L2113)
 
 ```python
 def visit_decorators(node: Node) -> Iterator[Line]:
@@ -1117,7 +1117,7 @@ Visit decorators.
 
 ### LineGenerator().visit_default
 
-[[find in source code]](../../blackt/__init__.py#L1979)
+[[find in source code]](../../blackt/__init__.py#L1998)
 
 ```python
 def visit_default(node: LN) -> Iterator[Line]:
@@ -1131,7 +1131,7 @@ Default `visit_*()` implementation. Recurses to children of `node`.
 
 ### LineGenerator().visit_factor
 
-[[find in source code]](../../blackt/__init__.py#L2114)
+[[find in source code]](../../blackt/__init__.py#L2133)
 
 ```python
 def visit_factor(node: Node) -> Iterator[Line]:
@@ -1143,7 +1143,7 @@ Force parentheses between a unary op and a binary power:
 
 ### LineGenerator().visit_simple_stmt
 
-[[find in source code]](../../blackt/__init__.py#L2057)
+[[find in source code]](../../blackt/__init__.py#L2076)
 
 ```python
 def visit_simple_stmt(node: Node) -> Iterator[Line]:
@@ -1153,7 +1153,7 @@ Visit a statement without nested statements.
 
 ### LineGenerator().visit_stmt
 
-[[find in source code]](../../blackt/__init__.py#L2029)
+[[find in source code]](../../blackt/__init__.py#L2048)
 
 ```python
 def visit_stmt(
@@ -1176,7 +1176,7 @@ invisible parens should be put.
 
 ### LineGenerator().visit_suite
 
-[[find in source code]](../../blackt/__init__.py#L2050)
+[[find in source code]](../../blackt/__init__.py#L2069)
 
 ```python
 def visit_suite(node: Node) -> Iterator[Line]:
@@ -1186,7 +1186,7 @@ Visit a suite.
 
 ## Mode
 
-[[find in source code]](../../blackt/__init__.py#L252)
+[[find in source code]](../../blackt/__init__.py#L271)
 
 ```python
 dataclass
@@ -1195,7 +1195,7 @@ class Mode():
 
 ### Mode().get_cache_key
 
-[[find in source code]](../../blackt/__init__.py#L260)
+[[find in source code]](../../blackt/__init__.py#L279)
 
 ```python
 def get_cache_key() -> str:
@@ -1203,7 +1203,7 @@ def get_cache_key() -> str:
 
 ## NothingChanged
 
-[[find in source code]](../../blackt/__init__.py#L97)
+[[find in source code]](../../blackt/__init__.py#L116)
 
 ```python
 class NothingChanged(UserWarning):
@@ -1213,7 +1213,7 @@ Raised when reformatted code is the same as source.
 
 ## Ok
 
-[[find in source code]](../../blackt/__init__.py#L121)
+[[find in source code]](../../blackt/__init__.py#L140)
 
 ```python
 class Ok(Generic[T]):
@@ -1226,7 +1226,7 @@ class Ok(Generic[T]):
 
 ### Ok().ok
 
-[[find in source code]](../../blackt/__init__.py#L125)
+[[find in source code]](../../blackt/__init__.py#L144)
 
 ```python
 def ok() -> T:
@@ -1238,7 +1238,7 @@ def ok() -> T:
 
 ## ProtoComment
 
-[[find in source code]](../../blackt/__init__.py#L2624)
+[[find in source code]](../../blackt/__init__.py#L2643)
 
 ```python
 dataclass
@@ -1256,7 +1256,7 @@ It's not a class `blib2to3.pytree.Leaf` so that:
 
 ## Report
 
-[[find in source code]](../../blackt/__init__.py#L6252)
+[[find in source code]](../../blackt/__init__.py#L6281)
 
 ```python
 dataclass
@@ -1267,7 +1267,7 @@ Provides a reformatting counter. Can be rendered with `str(report)`.
 
 ### Report().\_\_str\_\_
 
-[[find in source code]](../../blackt/__init__.py#L6307)
+[[find in source code]](../../blackt/__init__.py#L6336)
 
 ```python
 def __str__() -> str:
@@ -1279,7 +1279,7 @@ Use `click.unstyle` to remove colors.
 
 ### Report().done
 
-[[find in source code]](../../blackt/__init__.py#L6263)
+[[find in source code]](../../blackt/__init__.py#L6292)
 
 ```python
 def done(src: Path, changed: Changed) -> None:
@@ -1293,7 +1293,7 @@ Increment the counter for successful reformatting. Write out a message.
 
 ### Report().failed
 
-[[find in source code]](../../blackt/__init__.py#L6279)
+[[find in source code]](../../blackt/__init__.py#L6308)
 
 ```python
 def failed(src: Path, message: str) -> None:
@@ -1303,7 +1303,7 @@ Increment the counter for failed reformatting. Write out a message.
 
 ### Report().path_ignored
 
-[[find in source code]](../../blackt/__init__.py#L6284)
+[[find in source code]](../../blackt/__init__.py#L6313)
 
 ```python
 def path_ignored(path: Path, message: str) -> None:
@@ -1311,7 +1311,7 @@ def path_ignored(path: Path, message: str) -> None:
 
 ### Report().return_code
 
-[[find in source code]](../../blackt/__init__.py#L6288)
+[[find in source code]](../../blackt/__init__.py#L6317)
 
 ```python
 @property
@@ -1327,7 +1327,7 @@ This considers the current state of changed files and failures:
 
 ## StringMerger
 
-[[find in source code]](../../blackt/__init__.py#L2990)
+[[find in source code]](../../blackt/__init__.py#L3016)
 
 ```python
 class StringMerger(CustomSplitMapMixin, StringTransformer):
@@ -1358,7 +1358,7 @@ Collaborations:
 
 ### StringMerger().__merge_string_group
 
-[[find in source code]](../../blackt/__init__.py#L3091)
+[[find in source code]](../../blackt/__init__.py#L3117)
 
 ```python
 def __merge_string_group(line: Line, string_idx: int) -> TResult[Line]:
@@ -1380,7 +1380,7 @@ Err(CannotTransform), otherwise.
 
 ### StringMerger.__remove_backslash_line_continuation_chars
 
-[[find in source code]](../../blackt/__init__.py#L3055)
+[[find in source code]](../../blackt/__init__.py#L3081)
 
 ```python
 @staticmethod
@@ -1406,7 +1406,7 @@ Err(CannotTransform), otherwise.
 
 ### StringMerger.__validate_msg
 
-[[find in source code]](../../blackt/__init__.py#L3234)
+[[find in source code]](../../blackt/__init__.py#L3260)
 
 ```python
 @staticmethod
@@ -1437,7 +1437,7 @@ Transform-time string validation logic for __merge_string_group(...).
 
 ### StringMerger().do_match
 
-[[find in source code]](../../blackt/__init__.py#L3010)
+[[find in source code]](../../blackt/__init__.py#L3036)
 
 ```python
 def do_match(line: Line) -> TMatchResult:
@@ -1450,7 +1450,7 @@ def do_match(line: Line) -> TMatchResult:
 
 ### StringMerger().do_transform
 
-[[find in source code]](../../blackt/__init__.py#L3028)
+[[find in source code]](../../blackt/__init__.py#L3054)
 
 ```python
 def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
@@ -1462,7 +1462,7 @@ def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
 
 ## StringParenStripper
 
-[[find in source code]](../../blackt/__init__.py#L3316)
+[[find in source code]](../../blackt/__init__.py#L3342)
 
 ```python
 class StringParenStripper(StringTransformer):
@@ -1492,7 +1492,7 @@ Collaborations:
 
 ### StringParenStripper().do_match
 
-[[find in source code]](../../blackt/__init__.py#L3336)
+[[find in source code]](../../blackt/__init__.py#L3362)
 
 ```python
 def do_match(line: Line) -> TMatchResult:
@@ -1505,7 +1505,7 @@ def do_match(line: Line) -> TMatchResult:
 
 ### StringParenStripper().do_transform
 
-[[find in source code]](../../blackt/__init__.py#L3427)
+[[find in source code]](../../blackt/__init__.py#L3453)
 
 ```python
 def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
@@ -1517,7 +1517,7 @@ def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
 
 ## StringParenWrapper
 
-[[find in source code]](../../blackt/__init__.py#L4094)
+[[find in source code]](../../blackt/__init__.py#L4120)
 
 ```python
 class StringParenWrapper(CustomSplitMapMixin, BaseStringSplitter):
@@ -1576,7 +1576,7 @@ Collaborations:
 
 ### StringParenWrapper().do_splitter_match
 
-[[find in source code]](../../blackt/__init__.py#L4143)
+[[find in source code]](../../blackt/__init__.py#L4169)
 
 ```python
 def do_splitter_match(line: Line) -> TMatchResult:
@@ -1589,7 +1589,7 @@ def do_splitter_match(line: Line) -> TMatchResult:
 
 ### StringParenWrapper().do_transform
 
-[[find in source code]](../../blackt/__init__.py#L4345)
+[[find in source code]](../../blackt/__init__.py#L4374)
 
 ```python
 def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
@@ -1601,7 +1601,7 @@ def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
 
 ## StringParser
 
-[[find in source code]](../../blackt/__init__.py#L4443)
+[[find in source code]](../../blackt/__init__.py#L4472)
 
 ```python
 class StringParser():
@@ -1645,7 +1645,7 @@ assert line.leaves[idx].type == token.PLUS
 
 ### StringParser().parse
 
-[[find in source code]](../../blackt/__init__.py#L4515)
+[[find in source code]](../../blackt/__init__.py#L4544)
 
 ```python
 def parse(leaves: List[Leaf], string_idx: int) -> int:
@@ -1663,7 +1663,7 @@ trailer, if a "trailer" exists.
 
 ## StringSplitter
 
-[[find in source code]](../../blackt/__init__.py#L3662)
+[[find in source code]](../../blackt/__init__.py#L3688)
 
 ```python
 class StringSplitter(CustomSplitMapMixin, BaseStringSplitter):
@@ -1715,7 +1715,7 @@ Collaborations:
 
 ### StringSplitter().__get_break_idx
 
-[[find in source code]](../../blackt/__init__.py#L3953)
+[[find in source code]](../../blackt/__init__.py#L3979)
 
 ```python
 def __get_break_idx(string: str, max_break_idx: int) -> Optional[int]:
@@ -1747,7 +1747,7 @@ None, otherwise.
 
 ### StringSplitter().__normalize_f_string
 
-[[find in source code]](../../blackt/__init__.py#L4066)
+[[find in source code]](../../blackt/__init__.py#L4092)
 
 ```python
 def __normalize_f_string(string: str, prefix: str) -> str:
@@ -1767,7 +1767,7 @@ been normalized (i.e. turned into '{' or '}').
 
 ### StringSplitter().do_splitter_match
 
-[[find in source code]](../../blackt/__init__.py#L3713)
+[[find in source code]](../../blackt/__init__.py#L3739)
 
 ```python
 def do_splitter_match(line: Line) -> TMatchResult:
@@ -1780,7 +1780,7 @@ def do_splitter_match(line: Line) -> TMatchResult:
 
 ### StringSplitter().do_transform
 
-[[find in source code]](../../blackt/__init__.py#L3752)
+[[find in source code]](../../blackt/__init__.py#L3778)
 
 ```python
 def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
@@ -1792,7 +1792,7 @@ def do_transform(line: Line, string_idx: int) -> Iterator[TResult[Line]]:
 
 ## StringTransformer
 
-[[find in source code]](../../blackt/__init__.py#L2810)
+[[find in source code]](../../blackt/__init__.py#L2836)
 
 ```python
 dataclass
@@ -1825,7 +1825,7 @@ Collaborations:
 
 ### StringTransformer().\_\_call\_\_
 
-[[find in source code]](../../blackt/__init__.py#L2870)
+[[find in source code]](../../blackt/__init__.py#L2896)
 
 ```python
 def __call__(line: Line, _features: Collection[Feature]) -> Iterator[Line]:
@@ -1845,7 +1845,7 @@ to transform @line.
 
 ### StringTransformer().do_match
 
-[[find in source code]](../../blackt/__init__.py#L2841)
+[[find in source code]](../../blackt/__init__.py#L2867)
 
 ```python
 @abstractmethod
@@ -1866,7 +1866,7 @@ string, if a match was able to be made.
 
 ### StringTransformer().do_transform
 
-[[find in source code]](../../blackt/__init__.py#L2851)
+[[find in source code]](../../blackt/__init__.py#L2877)
 
 ```python
 @abstractmethod
@@ -1895,7 +1895,7 @@ Side Effects:
 
 ## TargetVersion
 
-[[find in source code]](../../blackt/__init__.py#L171)
+[[find in source code]](../../blackt/__init__.py#L190)
 
 ```python
 class TargetVersion(Enum):
@@ -1903,7 +1903,7 @@ class TargetVersion(Enum):
 
 ### TargetVersion().is_python2
 
-[[find in source code]](../../blackt/__init__.py#L181)
+[[find in source code]](../../blackt/__init__.py#L200)
 
 ```python
 def is_python2() -> bool:
@@ -1911,7 +1911,7 @@ def is_python2() -> bool:
 
 ## Visitor
 
-[[find in source code]](../../blackt/__init__.py#L1154)
+[[find in source code]](../../blackt/__init__.py#L1173)
 
 ```python
 class Visitor(Generic[T]):
@@ -1921,7 +1921,7 @@ Basic lib2to3 visitor that yields things of type `T` on `visit()`.
 
 ### Visitor().visit
 
-[[find in source code]](../../blackt/__init__.py#L1157)
+[[find in source code]](../../blackt/__init__.py#L1176)
 
 ```python
 def visit(node: LN) -> Iterator[T]:
@@ -1942,7 +1942,7 @@ Then yields objects of type `T` from the selected visitor.
 
 ### Visitor().visit_default
 
-[[find in source code]](../../blackt/__init__.py#L1181)
+[[find in source code]](../../blackt/__init__.py#L1200)
 
 ```python
 def visit_default(node: LN) -> Iterator[T]:
@@ -1956,7 +1956,7 @@ Default `visit_*()` implementation. Recurses to children of `node`.
 
 ## WriteBack
 
-[[find in source code]](../../blackt/__init__.py#L145)
+[[find in source code]](../../blackt/__init__.py#L164)
 
 ```python
 class WriteBack(Enum):
@@ -1964,7 +1964,7 @@ class WriteBack(Enum):
 
 ### WriteBack.from_configuration
 
-[[find in source code]](../../blackt/__init__.py#L152)
+[[find in source code]](../../blackt/__init__.py#L171)
 
 ```python
 @classmethod
@@ -1977,7 +1977,7 @@ def from_configuration(
 
 ## TErr
 
-[[find in source code]](../../blackt/__init__.py#L4585)
+[[find in source code]](../../blackt/__init__.py#L4614)
 
 ```python
 def TErr(err_msg: str) -> Err[CannotTransform]:
@@ -1989,7 +1989,7 @@ Convenience function used when working with the TResult type.
 
 ## append_leaves
 
-[[find in source code]](../../blackt/__init__.py#L4738)
+[[find in source code]](../../blackt/__init__.py#L4767)
 
 ```python
 def append_leaves(
@@ -2017,7 +2017,7 @@ Pre-conditions:
 
 ## assert_equivalent
 
-[[find in source code]](../../blackt/__init__.py#L6436)
+[[find in source code]](../../blackt/__init__.py#L6465)
 
 ```python
 def assert_equivalent(src: str, dst: str) -> None:
@@ -2027,7 +2027,7 @@ Raise AssertionError if `src` and `dst` aren't equivalent.
 
 ## assert_is_leaf_string
 
-[[find in source code]](../../blackt/__init__.py#L4798)
+[[find in source code]](../../blackt/__init__.py#L4827)
 
 ```python
 def assert_is_leaf_string(string: str) -> None:
@@ -2050,7 +2050,7 @@ satisfied.
 
 ## assert_stable
 
-[[find in source code]](../../blackt/__init__.py#L6467)
+[[find in source code]](../../blackt/__init__.py#L6496)
 
 ```python
 def assert_stable(src: str, dst: str, mode: Mode) -> None:
@@ -2064,7 +2064,7 @@ Raise AssertionError if `dst` reformats differently the second time.
 
 ## bracket_split_build_line
 
-[[find in source code]](../../blackt/__init__.py#L4983)
+[[find in source code]](../../blackt/__init__.py#L5012)
 
 ```python
 def bracket_split_build_line(
@@ -2086,7 +2086,7 @@ has its first leaf's prefix normalized and a trailing comma added when expected.
 
 ## bracket_split_succeeded_or_raise
 
-[[find in source code]](../../blackt/__init__.py#L4957)
+[[find in source code]](../../blackt/__init__.py#L4986)
 
 ```python
 def bracket_split_succeeded_or_raise(
@@ -2115,7 +2115,7 @@ and the `tail` is just the closing bracket, then it's considered failed.
 
 ## can_be_split
 
-[[find in source code]](../../blackt/__init__.py#L6622)
+[[find in source code]](../../blackt/__init__.py#L6651)
 
 ```python
 def can_be_split(line: Line) -> bool:
@@ -2133,7 +2133,7 @@ in unnecessary parentheses).
 
 ## can_omit_invisible_parens
 
-[[find in source code]](../../blackt/__init__.py#L6658)
+[[find in source code]](../../blackt/__init__.py#L6687)
 
 ```python
 def can_omit_invisible_parens(
@@ -2155,7 +2155,7 @@ are too long.
 
 ## cancel
 
-[[find in source code]](../../blackt/__init__.py#L6525)
+[[find in source code]](../../blackt/__init__.py#L6554)
 
 ```python
 def cancel(tasks: Iterable['asyncio.Task[Any]']) -> None:
@@ -2165,7 +2165,7 @@ asyncio signal handler that cancels all `tasks` and reports to stderr.
 
 ## child_towards
 
-[[find in source code]](../../blackt/__init__.py#L2451)
+[[find in source code]](../../blackt/__init__.py#L2470)
 
 ```python
 def child_towards(ancestor: Node, descendant: LN) -> Optional[LN]:
@@ -2179,7 +2179,7 @@ Return the child of `ancestor` that contains `descendant`.
 
 ## color_diff
 
-[[find in source code]](../../blackt/__init__.py#L910)
+[[find in source code]](../../blackt/__init__.py#L929)
 
 ```python
 def color_diff(contents: str) -> str:
@@ -2189,7 +2189,7 @@ Inject the ANSI color codes to the diff.
 
 ## container_of
 
-[[find in source code]](../../blackt/__init__.py#L2459)
+[[find in source code]](../../blackt/__init__.py#L2478)
 
 ```python
 def container_of(leaf: Leaf) -> LN:
@@ -2205,7 +2205,7 @@ By "container" we mean a node where `leaf` is the very first child.
 
 ## contains_fmt_on_at_column
 
-[[find in source code]](../../blackt/__init__.py#L5521)
+[[find in source code]](../../blackt/__init__.py#L5550)
 
 ```python
 def contains_fmt_on_at_column(container: LN, column: int) -> bool:
@@ -2219,7 +2219,7 @@ Determine if children at a given column have formatting switched on.
 
 ## contains_pragma_comment
 
-[[find in source code]](../../blackt/__init__.py#L4594)
+[[find in source code]](../../blackt/__init__.py#L4623)
 
 ```python
 def contains_pragma_comment(comment_list: List[Leaf]) -> bool:
@@ -2233,7 +2233,7 @@ pylint).
 
 ## convert_one_fmt_off_pair
 
-[[find in source code]](../../blackt/__init__.py#L5411)
+[[find in source code]](../../blackt/__init__.py#L5440)
 
 ```python
 def convert_one_fmt_off_pair(node: Node) -> bool:
@@ -2245,7 +2245,7 @@ Returns True if a pair was converted.
 
 ## decode_bytes
 
-[[find in source code]](../../blackt/__init__.py#L1065)
+[[find in source code]](../../blackt/__init__.py#L1084)
 
 ```python
 def decode_bytes(src: bytes) -> Tuple[(FileContent, Encoding, NewLine)]:
@@ -2258,7 +2258,7 @@ universal newlines (i.e. only contains LF).
 
 ## delimiter_split
 
-[[find in source code]](../../blackt/__init__.py#L5041)
+[[find in source code]](../../blackt/__init__.py#L5070)
 
 ```python
 @dont_increase_indentation
@@ -2280,7 +2280,7 @@ also in function signatures and calls that contain `*` and `**`.
 
 ## detect_target_versions
 
-[[find in source code]](../../blackt/__init__.py#L5955)
+[[find in source code]](../../blackt/__init__.py#L5984)
 
 ```python
 def detect_target_versions(node: Node) -> Set[TargetVersion]:
@@ -2290,7 +2290,7 @@ Detect the version to target based on the nodes used.
 
 ## diff
 
-[[find in source code]](../../blackt/__init__.py#L6505)
+[[find in source code]](../../blackt/__init__.py#L6534)
 
 ```python
 def diff(a: str, b: str, a_name: str, b_name: str) -> str:
@@ -2300,7 +2300,7 @@ Return a unified diff string between strings `a` and `b`.
 
 ## dont_increase_indentation
 
-[[find in source code]](../../blackt/__init__.py#L5026)
+[[find in source code]](../../blackt/__init__.py#L5055)
 
 ```python
 def dont_increase_indentation(split_func: Transformer) -> Transformer:
@@ -2316,7 +2316,7 @@ This is a decorator over relevant split functions.
 
 ## dump_to_file
 
-[[find in source code]](../../blackt/__init__.py#L6483)
+[[find in source code]](../../blackt/__init__.py#L6512)
 
 ```python
 @mypyc_attr(patchable=True)
@@ -2327,7 +2327,7 @@ Dump `output` to a temporary file. Return path to the file.
 
 ## ensure_visible
 
-[[find in source code]](../../blackt/__init__.py#L5827)
+[[find in source code]](../../blackt/__init__.py#L5856)
 
 ```python
 def ensure_visible(leaf: Leaf) -> None:
@@ -2340,7 +2340,7 @@ They could be invisible as part of some statements (see
 
 ## enumerate_reversed
 
-[[find in source code]](../../blackt/__init__.py#L6578)
+[[find in source code]](../../blackt/__init__.py#L6607)
 
 ```python
 def enumerate_reversed(sequence: Sequence[T]) -> Iterator[Tuple[(Index, T)]]:
@@ -2350,7 +2350,7 @@ Like `reversed(enumerate(sequence))` if that were possible.
 
 ## enumerate_with_length
 
-[[find in source code]](../../blackt/__init__.py#L6586)
+[[find in source code]](../../blackt/__init__.py#L6615)
 
 ```python
 def enumerate_with_length(
@@ -2369,7 +2369,7 @@ Stops prematurely on multiline strings and standalone comments.
 
 ## filter_cached
 
-[[find in source code]](../../blackt/__init__.py#L6868)
+[[find in source code]](../../blackt/__init__.py#L6897)
 
 ```python
 def filter_cached(
@@ -2389,11 +2389,11 @@ cache. The other contains paths to non-modified files.
 
 ## find_project_root
 
-[[find in source code]](../../blackt/__init__.py#L6196)
+[[find in source code]](../../blackt/__init__.py#L6225)
 
 ```python
 @lru_cache()
-def find_project_root(srcs: Iterable[str]) -> Path:
+def find_project_root(srcs: Tuple[(str, ...)]) -> Path:
 ```
 
 Return a directory containing .git, .hg, or pyproject.toml.
@@ -2406,17 +2406,19 @@ project root, the root of the file system is returned.
 
 ## find_pyproject_toml
 
-[[find in source code]](../../blackt/__init__.py#L285)
+[[find in source code]](../../blackt/__init__.py#L304)
 
 ```python
-def find_pyproject_toml(path_search_start: Iterable[str]) -> Optional[str]:
+def find_pyproject_toml(
+    path_search_start: Tuple[(str, ...)],
+) -> Optional[str]:
 ```
 
 Find the absolute filepath to a pyproject.toml if it exists
 
 ## find_user_pyproject_toml
 
-[[find in source code]](../../blackt/__init__.py#L6235)
+[[find in source code]](../../blackt/__init__.py#L6264)
 
 ```python
 @lru_cache()
@@ -2430,7 +2432,7 @@ Unix systems.
 
 ## first_child_is_arith
 
-[[find in source code]](../../blackt/__init__.py#L5627)
+[[find in source code]](../../blackt/__init__.py#L5656)
 
 ```python
 def first_child_is_arith(node: Node) -> bool:
@@ -2440,7 +2442,7 @@ Whether first child is an arithmetic or a binary arithmetic expression
 
 ## first_leaf_column
 
-[[find in source code]](../../blackt/__init__.py#L5536)
+[[find in source code]](../../blackt/__init__.py#L5565)
 
 ```python
 def first_leaf_column(node: Node) -> Optional[int]:
@@ -2450,7 +2452,7 @@ Returns the column of the first leaf child of a node.
 
 ## fix_docstring
 
-[[find in source code]](../../blackt/__init__.py#L6970)
+[[find in source code]](../../blackt/__init__.py#L6999)
 
 ```python
 def fix_docstring(docstring: str, prefix: str) -> str:
@@ -2458,7 +2460,7 @@ def fix_docstring(docstring: str, prefix: str) -> str:
 
 ## format_file_contents
 
-[[find in source code]](../../blackt/__init__.py#L983)
+[[find in source code]](../../blackt/__init__.py#L1002)
 
 ```python
 def format_file_contents(
@@ -2481,7 +2483,7 @@ valid by calling :func:[assert_equivalent](#assert_equivalent) and :func:[assert
 
 ## format_file_in_place
 
-[[find in source code]](../../blackt/__init__.py#L860)
+[[find in source code]](../../blackt/__init__.py#L879)
 
 ```python
 def format_file_in_place(
@@ -2506,7 +2508,7 @@ code to the file.
 
 ## format_float_or_int_string
 
-[[find in source code]](../../blackt/__init__.py#L5342)
+[[find in source code]](../../blackt/__init__.py#L5371)
 
 ```python
 def format_float_or_int_string(text: str) -> str:
@@ -2516,7 +2518,7 @@ Formats a float string like "1.0".
 
 ## format_hex
 
-[[find in source code]](../../blackt/__init__.py#L5306)
+[[find in source code]](../../blackt/__init__.py#L5335)
 
 ```python
 def format_hex(text: str) -> str:
@@ -2530,7 +2532,7 @@ see: https://github.com/psf/black/issues/1692
 
 ## format_long_or_complex_number
 
-[[find in source code]](../../blackt/__init__.py#L5332)
+[[find in source code]](../../blackt/__init__.py#L5361)
 
 ```python
 def format_long_or_complex_number(text: str) -> str:
@@ -2540,7 +2542,7 @@ Formats a long or complex string like `10L` or `10j`
 
 ## format_scientific_notation
 
-[[find in source code]](../../blackt/__init__.py#L5319)
+[[find in source code]](../../blackt/__init__.py#L5348)
 
 ```python
 def format_scientific_notation(text: str) -> str:
@@ -2550,7 +2552,7 @@ Formats a numeric string utilizing scentific notation
 
 ## format_stdin_to_stdout
 
-[[find in source code]](../../blackt/__init__.py#L946)
+[[find in source code]](../../blackt/__init__.py#L965)
 
 ```python
 def format_stdin_to_stdout(
@@ -2573,7 +2575,7 @@ write a diff to stdout. The `mode` argument is passed to
 
 ## format_str
 
-[[find in source code]](../../blackt/__init__.py#L1003)
+[[find in source code]](../../blackt/__init__.py#L1022)
 
 ```python
 def format_str(src_contents: str, mode: Mode) -> FileContent:
@@ -2617,7 +2619,7 @@ def f(
 
 ## gen_python_files
 
-[[find in source code]](../../blackt/__init__.py#L6130)
+[[find in source code]](../../blackt/__init__.py#L6159)
 
 ```python
 def gen_python_files(
@@ -2642,7 +2644,7 @@ Symbolic links pointing outside of the `root` directory are ignored.
 
 ## generate_comments
 
-[[find in source code]](../../blackt/__init__.py#L2600)
+[[find in source code]](../../blackt/__init__.py#L2619)
 
 ```python
 def generate_comments(leaf: LN) -> Iterator[Leaf]:
@@ -2672,7 +2674,7 @@ are emitted with a fake STANDALONE_COMMENT token identifier.
 
 ## generate_ignored_nodes
 
-[[find in source code]](../../blackt/__init__.py#L5470)
+[[find in source code]](../../blackt/__init__.py#L5499)
 
 ```python
 def generate_ignored_nodes(leaf: Leaf, comment: ProtoComment) -> Iterator[LN]:
@@ -2689,7 +2691,7 @@ Stops at the end of the block.
 
 ## generate_trailers_to_omit
 
-[[find in source code]](../../blackt/__init__.py#L5963)
+[[find in source code]](../../blackt/__init__.py#L5992)
 
 ```python
 def generate_trailers_to_omit(
@@ -2713,7 +2715,7 @@ the one that needs to explode are omitted.
 
 ## get_cache_file
 
-[[find in source code]](../../blackt/__init__.py#L6840)
+[[find in source code]](../../blackt/__init__.py#L6869)
 
 ```python
 def get_cache_file(mode: Mode) -> Path:
@@ -2725,7 +2727,7 @@ def get_cache_file(mode: Mode) -> Path:
 
 ## get_cache_info
 
-[[find in source code]](../../blackt/__init__.py#L6862)
+[[find in source code]](../../blackt/__init__.py#L6891)
 
 ```python
 def get_cache_info(path: Path) -> CacheInfo:
@@ -2739,7 +2741,7 @@ Return the information used to check if a file is already formatted or not.
 
 ## get_features_used
 
-[[find in source code]](../../blackt/__init__.py#L5898)
+[[find in source code]](../../blackt/__init__.py#L5927)
 
 ```python
 def get_features_used(node: Node) -> Set[Feature]:
@@ -2757,7 +2759,7 @@ Currently looking for:
 
 ## get_future_imports
 
-[[find in source code]](../../blackt/__init__.py#L6037)
+[[find in source code]](../../blackt/__init__.py#L6066)
 
 ```python
 def get_future_imports(node: Node) -> Set[str]:
@@ -2767,7 +2769,7 @@ Return a set of __future__ imports in the file.
 
 ## get_gitignore
 
-[[find in source code]](../../blackt/__init__.py#L6087)
+[[find in source code]](../../blackt/__init__.py#L6116)
 
 ```python
 @lru_cache()
@@ -2778,7 +2780,7 @@ Return a PathSpec matching gitignore content if present.
 
 ## get_grammars
 
-[[find in source code]](../../blackt/__init__.py#L1082)
+[[find in source code]](../../blackt/__init__.py#L1101)
 
 ```python
 def get_grammars(target_versions: Set[TargetVersion]) -> List[Grammar]:
@@ -2786,7 +2788,7 @@ def get_grammars(target_versions: Set[TargetVersion]) -> List[Grammar]:
 
 ## get_sources
 
-[[find in source code]](../../blackt/__init__.py#L627)
+[[find in source code]](../../blackt/__init__.py#L646)
 
 ```python
 def get_sources(
@@ -2807,7 +2809,7 @@ Compute the set of files to be formatted.
 
 ## get_string_prefix
 
-[[find in source code]](../../blackt/__init__.py#L4779)
+[[find in source code]](../../blackt/__init__.py#L4808)
 
 ```python
 def get_string_prefix(string: str) -> str:
@@ -2822,7 +2824,7 @@ Pre-conditions:
 
 ## has_triple_quotes
 
-[[find in source code]](../../blackt/__init__.py#L4669)
+[[find in source code]](../../blackt/__init__.py#L4698)
 
 ```python
 def has_triple_quotes(string: str) -> bool:
@@ -2834,7 +2836,7 @@ True iff @string starts with three quotation characters.
 
 ## insert_str_child_factory
 
-[[find in source code]](../../blackt/__init__.py#L4608)
+[[find in source code]](../../blackt/__init__.py#L4637)
 
 ```python
 def insert_str_child_factory(string_leaf: Leaf) -> Callable[([LN], None)]:
@@ -2888,7 +2890,7 @@ Node(
 
 ## is_atom_with_invisible_parens
 
-[[find in source code]](../../blackt/__init__.py#L5585)
+[[find in source code]](../../blackt/__init__.py#L5614)
 
 ```python
 def is_atom_with_invisible_parens(node: LN) -> bool:
@@ -2903,7 +2905,7 @@ parens. Useful in dedupe-ing and normalizing parens.
 
 ## is_docstring
 
-[[find in source code]](../../blackt/__init__.py#L6928)
+[[find in source code]](../../blackt/__init__.py#L6957)
 
 ```python
 def is_docstring(leaf: Leaf) -> bool:
@@ -2911,7 +2913,7 @@ def is_docstring(leaf: Leaf) -> bool:
 
 ## is_empty_lpar
 
-[[find in source code]](../../blackt/__init__.py#L4695)
+[[find in source code]](../../blackt/__init__.py#L4724)
 
 ```python
 def is_empty_lpar(leaf: Leaf) -> bool:
@@ -2919,7 +2921,7 @@ def is_empty_lpar(leaf: Leaf) -> bool:
 
 ## is_empty_par
 
-[[find in source code]](../../blackt/__init__.py#L4691)
+[[find in source code]](../../blackt/__init__.py#L4720)
 
 ```python
 def is_empty_par(leaf: Leaf) -> bool:
@@ -2927,7 +2929,7 @@ def is_empty_par(leaf: Leaf) -> bool:
 
 ## is_empty_rpar
 
-[[find in source code]](../../blackt/__init__.py#L4699)
+[[find in source code]](../../blackt/__init__.py#L4728)
 
 ```python
 def is_empty_rpar(leaf: Leaf) -> bool:
@@ -2935,7 +2937,7 @@ def is_empty_rpar(leaf: Leaf) -> bool:
 
 ## is_empty_tuple
 
-[[find in source code]](../../blackt/__init__.py#L5603)
+[[find in source code]](../../blackt/__init__.py#L5632)
 
 ```python
 def is_empty_tuple(node: LN) -> bool:
@@ -2949,7 +2951,7 @@ Return True if `node` holds an empty tuple.
 
 ## is_fmt_on
 
-[[find in source code]](../../blackt/__init__.py#L5508)
+[[find in source code]](../../blackt/__init__.py#L5537)
 
 ```python
 def is_fmt_on(container: LN) -> bool:
@@ -2964,7 +2966,7 @@ Determined by whether the last `# fmt:` comment is `on` or `off`.
 
 ## is_import
 
-[[find in source code]](../../blackt/__init__.py#L5153)
+[[find in source code]](../../blackt/__init__.py#L5182)
 
 ```python
 def is_import(leaf: Leaf) -> bool:
@@ -2974,7 +2976,7 @@ Return True if the given leaf starts an import statement.
 
 ## is_line_short_enough
 
-[[find in source code]](../../blackt/__init__.py#L6608)
+[[find in source code]](../../blackt/__init__.py#L6637)
 
 ```python
 def is_line_short_enough(
@@ -2994,7 +2996,7 @@ Uses the provided `line_str` rendering, if any, otherwise computes a new one.
 
 ## is_multiline_string
 
-[[find in source code]](../../blackt/__init__.py#L5765)
+[[find in source code]](../../blackt/__init__.py#L5794)
 
 ```python
 def is_multiline_string(leaf: Leaf) -> bool:
@@ -3004,7 +3006,7 @@ Return True if `leaf` is a multiline string that actually spans many lines.
 
 ## is_one_tuple
 
-[[find in source code]](../../blackt/__init__.py#L5656)
+[[find in source code]](../../blackt/__init__.py#L5685)
 
 ```python
 def is_one_tuple(node: LN) -> bool:
@@ -3018,7 +3020,7 @@ Return True if `node` holds a tuple with one element, with or without parens.
 
 ## is_one_tuple_between
 
-[[find in source code]](../../blackt/__init__.py#L5866)
+[[find in source code]](../../blackt/__init__.py#L5895)
 
 ```python
 def is_one_tuple_between(
@@ -3032,7 +3034,7 @@ Return True if content between `opening` and `closing` looks like a one-tuple.
 
 ## is_simple_decorator_expression
 
-[[find in source code]](../../blackt/__init__.py#L5697)
+[[find in source code]](../../blackt/__init__.py#L5726)
 
 ```python
 def is_simple_decorator_expression(node: LN) -> bool:
@@ -3052,7 +3054,7 @@ The new grammar is : decorator: @ namedexpr_test NEWLINE
 
 ## is_simple_decorator_trailer
 
-[[find in source code]](../../blackt/__init__.py#L5678)
+[[find in source code]](../../blackt/__init__.py#L5707)
 
 ```python
 def is_simple_decorator_trailer(node: LN, last: bool = False) -> bool:
@@ -3066,7 +3068,7 @@ Return True iff `node` is a trailer valid in a simple decorator
 
 ## is_split_after_delimiter
 
-[[find in source code]](../../blackt/__init__.py#L2484)
+[[find in source code]](../../blackt/__init__.py#L2503)
 
 ```python
 def is_split_after_delimiter(
@@ -3088,7 +3090,7 @@ Higher numbers are higher priority.
 
 ## is_split_before_delimiter
 
-[[find in source code]](../../blackt/__init__.py#L2498)
+[[find in source code]](../../blackt/__init__.py#L2517)
 
 ```python
 def is_split_before_delimiter(
@@ -3110,7 +3112,7 @@ Higher numbers are higher priority.
 
 ## is_stub_body
 
-[[find in source code]](../../blackt/__init__.py#L5783)
+[[find in source code]](../../blackt/__init__.py#L5812)
 
 ```python
 def is_stub_body(node: LN) -> bool:
@@ -3124,7 +3126,7 @@ Return True if `node` is a simple statement containing an ellipsis.
 
 ## is_stub_suite
 
-[[find in source code]](../../blackt/__init__.py#L5770)
+[[find in source code]](../../blackt/__init__.py#L5799)
 
 ```python
 def is_stub_suite(node: Node) -> bool:
@@ -3134,7 +3136,7 @@ Return True if `node` is a suite with a stub body.
 
 ## is_type_comment
 
-[[find in source code]](../../blackt/__init__.py#L5167)
+[[find in source code]](../../blackt/__init__.py#L5196)
 
 ```python
 def is_type_comment(leaf: Leaf, suffix: str = '') -> bool:
@@ -3145,7 +3147,7 @@ Only returns true for type comments for now.
 
 ## is_valid_index_factory
 
-[[find in source code]](../../blackt/__init__.py#L4703)
+[[find in source code]](../../blackt/__init__.py#L4732)
 
 ```python
 def is_valid_index_factory(seq: Sequence[Any]) -> Callable[([int], bool)]:
@@ -3167,7 +3169,7 @@ assert not is_valid_index(-1)
 
 ## is_vararg
 
-[[find in source code]](../../blackt/__init__.py#L5742)
+[[find in source code]](../../blackt/__init__.py#L5771)
 
 ```python
 def is_vararg(leaf: Leaf, within: Set[NodeType]) -> bool:
@@ -3182,7 +3184,7 @@ generalizations (PEP 448).
 
 ## is_walrus_assignment
 
-[[find in source code]](../../blackt/__init__.py#L5672)
+[[find in source code]](../../blackt/__init__.py#L5701)
 
 ```python
 def is_walrus_assignment(node: LN) -> bool:
@@ -3196,7 +3198,7 @@ Return True iff `node` is of the shape ( test := test )
 
 ## is_yield
 
-[[find in source code]](../../blackt/__init__.py#L5721)
+[[find in source code]](../../blackt/__init__.py#L5750)
 
 ```python
 def is_yield(node: LN) -> bool:
@@ -3210,7 +3212,7 @@ Return True if `node` holds a `yield` or `yield from` expression.
 
 ## last_two_except
 
-[[find in source code]](../../blackt/__init__.py#L6778)
+[[find in source code]](../../blackt/__init__.py#L6807)
 
 ```python
 def last_two_except(
@@ -3223,7 +3225,7 @@ Return (penultimate, last) leaves skipping brackets in `omit` and contents.
 
 ## left_hand_split
 
-[[find in source code]](../../blackt/__init__.py#L4833)
+[[find in source code]](../../blackt/__init__.py#L4862)
 
 ```python
 def left_hand_split(
@@ -3244,7 +3246,7 @@ Prefer RHS otherwise.  This is why this function is not symmetrical with
 
 ## lib2to3_parse
 
-[[find in source code]](../../blackt/__init__.py#L1121)
+[[find in source code]](../../blackt/__init__.py#L1140)
 
 ```python
 def lib2to3_parse(
@@ -3257,7 +3259,7 @@ Given a string with source, return the lib2to3 Node.
 
 ## lib2to3_unparse
 
-[[find in source code]](../../blackt/__init__.py#L1148)
+[[find in source code]](../../blackt/__init__.py#L1167)
 
 ```python
 def lib2to3_unparse(node: Node) -> str:
@@ -3267,7 +3269,7 @@ Given a lib2to3 node, return its string representation.
 
 ## line_to_string
 
-[[find in source code]](../../blackt/__init__.py#L4730)
+[[find in source code]](../../blackt/__init__.py#L4759)
 
 ```python
 def line_to_string(line: Line) -> str:
@@ -3283,7 +3285,7 @@ WARNING: This is known to be computationally expensive.
 
 ## lines_with_leading_tabs_expanded
 
-[[find in source code]](../../blackt/__init__.py#L6948)
+[[find in source code]](../../blackt/__init__.py#L6977)
 
 ```python
 def lines_with_leading_tabs_expanded(s: str) -> List[str]:
@@ -3294,7 +3296,7 @@ Python rules)
 
 ## list_comments
 
-[[find in source code]](../../blackt/__init__.py#L2641)
+[[find in source code]](../../blackt/__init__.py#L2660)
 
 ```python
 @lru_cache(maxsize=4096)
@@ -3305,7 +3307,7 @@ Return a list of :class:[ProtoComment](#protocomment) objects parsed from the gi
 
 ## main
 
-[[find in source code]](../../blackt/__init__.py#L374)
+[[find in source code]](../../blackt/__init__.py#L393)
 
 ```python
 @click.command(context_settings=dict(help_option_names=['-h', '--help']))
@@ -3476,7 +3478,7 @@ The uncompromising code formatter.
 
 ## make_comment
 
-[[find in source code]](../../blackt/__init__.py#L2678)
+[[find in source code]](../../blackt/__init__.py#L2697)
 
 ```python
 def make_comment(content: str) -> str:
@@ -3491,7 +3493,7 @@ If `content` didn't start with a hash sign, one is provided.
 
 ## max_delimiter_priority_in_atom
 
-[[find in source code]](../../blackt/__init__.py#L5799)
+[[find in source code]](../../blackt/__init__.py#L5828)
 
 ```python
 def max_delimiter_priority_in_atom(node: LN) -> Priority:
@@ -3509,7 +3511,7 @@ If `node` isn't an atom or there are no enclosing parentheses, returns 0.
 
 ## maybe_make_parens_invisible_in_atom
 
-[[find in source code]](../../blackt/__init__.py#L5544)
+[[find in source code]](../../blackt/__init__.py#L5573)
 
 ```python
 def maybe_make_parens_invisible_in_atom(node: LN, parent: LN) -> bool:
@@ -3527,7 +3529,7 @@ Returns whether the node should itself be wrapped in invisible parentheses.
 
 ## normalize_fmt_off
 
-[[find in source code]](../../blackt/__init__.py#L5404)
+[[find in source code]](../../blackt/__init__.py#L5433)
 
 ```python
 def normalize_fmt_off(node: Node) -> None:
@@ -3537,7 +3539,7 @@ Convert content between `# fmt: off`/`# fmt: on` into standalone comments.
 
 ## normalize_invisible_parens
 
-[[find in source code]](../../blackt/__init__.py#L5351)
+[[find in source code]](../../blackt/__init__.py#L5380)
 
 ```python
 def normalize_invisible_parens(node: Node, parens_after: Set[str]) -> None:
@@ -3553,7 +3555,7 @@ existing visible parentheses for other tuples and generator expressions.
 
 ## normalize_numeric_literal
 
-[[find in source code]](../../blackt/__init__.py#L5285)
+[[find in source code]](../../blackt/__init__.py#L5314)
 
 ```python
 def normalize_numeric_literal(leaf: Leaf) -> None:
@@ -3566,7 +3568,7 @@ in Python 2 long literals).
 
 ## normalize_path_maybe_ignore
 
-[[find in source code]](../../blackt/__init__.py#L6098)
+[[find in source code]](../../blackt/__init__.py#L6127)
 
 ```python
 def normalize_path_maybe_ignore(
@@ -3582,7 +3584,7 @@ Normalize `path`. May return `None` if `path` was ignored.
 
 ## normalize_prefix
 
-[[find in source code]](../../blackt/__init__.py#L5175)
+[[find in source code]](../../blackt/__init__.py#L5204)
 
 ```python
 def normalize_prefix(leaf: Leaf, inside_brackets: bool) -> None:
@@ -3595,7 +3597,7 @@ Note: don't use backslashes for formatting or you'll lose your voting rights.
 
 ## normalize_string_prefix
 
-[[find in source code]](../../blackt/__init__.py#L5193)
+[[find in source code]](../../blackt/__init__.py#L5222)
 
 ```python
 def normalize_string_prefix(
@@ -3612,7 +3614,7 @@ Note: Mutates its argument.
 
 ## normalize_string_quotes
 
-[[find in source code]](../../blackt/__init__.py#L5209)
+[[find in source code]](../../blackt/__init__.py#L5238)
 
 ```python
 def normalize_string_quotes(leaf: Leaf) -> None:
@@ -3627,7 +3629,7 @@ Note: Mutates its argument.
 
 ## nullcontext
 
-[[find in source code]](../../blackt/__init__.py#L6496)
+[[find in source code]](../../blackt/__init__.py#L6525)
 
 ```python
 @contextmanager
@@ -3640,7 +3642,7 @@ To be used like [nullcontext](#nullcontext) in Python 3.7.
 
 ## parent_type
 
-[[find in source code]](../../blackt/__init__.py#L4678)
+[[find in source code]](../../blackt/__init__.py#L4707)
 
 ```python
 def parent_type(node: Optional[LN]) -> Optional[NodeType]:
@@ -3654,7 +3656,7 @@ None, otherwise.
 
 ## parse_ast
 
-[[find in source code]](../../blackt/__init__.py#L6337)
+[[find in source code]](../../blackt/__init__.py#L6366)
 
 ```python
 def parse_ast(src: str) -> Union[(ast.AST, ast3.AST, ast27.AST)]:
@@ -3662,7 +3664,7 @@ def parse_ast(src: str) -> Union[(ast.AST, ast3.AST, ast27.AST)]:
 
 ## parse_pyproject_toml
 
-[[find in source code]](../../blackt/__init__.py#L296)
+[[find in source code]](../../blackt/__init__.py#L315)
 
 ```python
 def parse_pyproject_toml(path_config: str) -> Dict[(str, Any)]:
@@ -3674,7 +3676,7 @@ If parsing fails, will raise a toml.TomlDecodeError
 
 ## patch_click
 
-[[find in source code]](../../blackt/__init__.py#L6900)
+[[find in source code]](../../blackt/__init__.py#L6929)
 
 ```python
 def patch_click() -> None:
@@ -3692,7 +3694,7 @@ spurious on Python 3.7 thanks to PEP 538 and PEP 540.
 
 ## patched_main
 
-[[find in source code]](../../blackt/__init__.py#L6922)
+[[find in source code]](../../blackt/__init__.py#L6951)
 
 ```python
 def patched_main() -> None:
@@ -3700,7 +3702,7 @@ def patched_main() -> None:
 
 ## path_empty
 
-[[find in source code]](../../blackt/__init__.py#L694)
+[[find in source code]](../../blackt/__init__.py#L713)
 
 ```python
 def path_empty(
@@ -3716,7 +3718,7 @@ Exit if there is no `src` provided for formatting
 
 ## path_is_excluded
 
-[[find in source code]](../../blackt/__init__.py#L6122)
+[[find in source code]](../../blackt/__init__.py#L6151)
 
 ```python
 def path_is_excluded(
@@ -3727,7 +3729,7 @@ def path_is_excluded(
 
 ## preceding_leaf
 
-[[find in source code]](../../blackt/__init__.py#L2417)
+[[find in source code]](../../blackt/__init__.py#L2436)
 
 ```python
 def preceding_leaf(node: Optional[LN]) -> Optional[Leaf]:
@@ -3737,7 +3739,7 @@ Return the first leaf that precedes `node`, if any.
 
 ## prev_siblings_are
 
-[[find in source code]](../../blackt/__init__.py#L2435)
+[[find in source code]](../../blackt/__init__.py#L2454)
 
 ```python
 def prev_siblings_are(
@@ -3753,7 +3755,7 @@ list is anchored at the start of its parent's children.
 
 ## re_compile_maybe_verbose
 
-[[find in source code]](../../blackt/__init__.py#L6567)
+[[find in source code]](../../blackt/__init__.py#L6596)
 
 ```python
 def re_compile_maybe_verbose(regex: str) -> Pattern[str]:
@@ -3765,7 +3767,7 @@ If it contains newlines, use verbose mode.
 
 ## read_cache
 
-[[find in source code]](../../blackt/__init__.py#L6844)
+[[find in source code]](../../blackt/__init__.py#L6873)
 
 ```python
 def read_cache(mode: Mode) -> Cache:
@@ -3782,7 +3784,7 @@ If it is not well formed, the call to write_cache later should resolve the issue
 
 ## read_pyproject_toml
 
-[[find in source code]](../../blackt/__init__.py#L306)
+[[find in source code]](../../blackt/__init__.py#L325)
 
 ```python
 def read_pyproject_toml(
@@ -3799,7 +3801,7 @@ otherwise.
 
 ## reformat_many
 
-[[find in source code]](../../blackt/__init__.py#L752)
+[[find in source code]](../../blackt/__init__.py#L771)
 
 ```python
 def reformat_many(
@@ -3820,7 +3822,7 @@ Reformat multiple files using a ProcessPoolExecutor.
 
 ## reformat_one
 
-[[find in source code]](../../blackt/__init__.py#L705)
+[[find in source code]](../../blackt/__init__.py#L724)
 
 ```python
 def reformat_one(
@@ -3844,7 +3846,7 @@ Reformat a single file under `src` without spawning child processes.
 
 ## replace_child
 
-[[find in source code]](../../blackt/__init__.py#L4762)
+[[find in source code]](../../blackt/__init__.py#L4791)
 
 ```python
 def replace_child(old_child: LN, new_child: LN) -> None:
@@ -3862,7 +3864,7 @@ Side Effects:
 
 ## right_hand_split
 
-[[find in source code]](../../blackt/__init__.py#L4869)
+[[find in source code]](../../blackt/__init__.py#L4898)
 
 ```python
 def right_hand_split(
@@ -3887,7 +3889,7 @@ Note: running this function modifies `bracket_depth` on the leaves of `line`.
 
 ## run_transformer
 
-[[find in source code]](../../blackt/__init__.py#L6799)
+[[find in source code]](../../blackt/__init__.py#L6828)
 
 ```python
 def run_transformer(
@@ -3907,7 +3909,7 @@ def run_transformer(
 
 ## schedule_formatting
 
-[[find in source code]](../../blackt/__init__.py#L789)
+[[find in source code]](../../blackt/__init__.py#L808)
 
 ```python
 async def schedule_formatting(
@@ -3935,7 +3937,7 @@ Run formatting of `sources` in parallel using the provided `executor`.
 
 ## should_split_line
 
-[[find in source code]](../../blackt/__init__.py#L5839)
+[[find in source code]](../../blackt/__init__.py#L5868)
 
 ```python
 def should_split_line(line: Line, opening_bracket: Leaf) -> bool:
@@ -3949,7 +3951,7 @@ Should `line` be immediately split with `delimiter_split()` after RHS?
 
 ## shutdown
 
-[[find in source code]](../../blackt/__init__.py#L6532)
+[[find in source code]](../../blackt/__init__.py#L6561)
 
 ```python
 def shutdown(loop: asyncio.AbstractEventLoop) -> None:
@@ -3959,7 +3961,7 @@ Cancel all pending tasks on `loop`, wait for them, and close the loop.
 
 ## standalone_comment_split
 
-[[find in source code]](../../blackt/__init__.py#L5118)
+[[find in source code]](../../blackt/__init__.py#L5147)
 
 ```python
 @dont_increase_indentation
@@ -3978,7 +3980,7 @@ Split standalone comments from the rest of the line.
 
 ## sub_twice
 
-[[find in source code]](../../blackt/__init__.py#L6558)
+[[find in source code]](../../blackt/__init__.py#L6587)
 
 ```python
 def sub_twice(regex: Pattern[str], replacement: str, original: str) -> str:
@@ -3991,7 +3993,7 @@ overlapping matches.
 
 ## supports_feature
 
-[[find in source code]](../../blackt/__init__.py#L281)
+[[find in source code]](../../blackt/__init__.py#L300)
 
 ```python
 def supports_feature(
@@ -4006,7 +4008,7 @@ def supports_feature(
 
 ## target_version_option_callback
 
-[[find in source code]](../../blackt/__init__.py#L352)
+[[find in source code]](../../blackt/__init__.py#L371)
 
 ```python
 def target_version_option_callback(
@@ -4023,7 +4025,7 @@ when it was a lambda, causing mypyc trouble.
 
 ## transform_line
 
-[[find in source code]](../../blackt/__init__.py#L2697)
+[[find in source code]](../../blackt/__init__.py#L2723)
 
 ```python
 def transform_line(
@@ -4046,7 +4048,7 @@ They should fit in the allotted `line_length` but might not be able to.
 
 ## unwrap_singleton_parenthesis
 
-[[find in source code]](../../blackt/__init__.py#L5613)
+[[find in source code]](../../blackt/__init__.py#L5642)
 
 ```python
 def unwrap_singleton_parenthesis(node: LN) -> Optional[LN]:
@@ -4062,7 +4064,7 @@ Parenthesis can be optional. Returns None otherwise
 
 ## validate_regex
 
-[[find in source code]](../../blackt/__init__.py#L363)
+[[find in source code]](../../blackt/__init__.py#L382)
 
 ```python
 def validate_regex(
@@ -4074,7 +4076,7 @@ def validate_regex(
 
 ## whitespace
 
-[[find in source code]](../../blackt/__init__.py#L2184)
+[[find in source code]](../../blackt/__init__.py#L2203)
 
 ```python
 def whitespace(leaf: Leaf, complex_subscript: bool) -> str:
@@ -4087,7 +4089,7 @@ which has non-trivial arguments, like arithmetic expressions or function calls.
 
 ## wrap_in_parentheses
 
-[[find in source code]](../../blackt/__init__.py#L5638)
+[[find in source code]](../../blackt/__init__.py#L5667)
 
 ```python
 def wrap_in_parentheses(
@@ -4110,7 +4112,7 @@ If `visible` is False, the leaves will be valueless (and thus invisible).
 
 ## wrap_stream_for_windows
 
-[[find in source code]](../../blackt/__init__.py#L926)
+[[find in source code]](../../blackt/__init__.py#L945)
 
 ```python
 def wrap_stream_for_windows(
@@ -4127,7 +4129,7 @@ an `AnsiToWin32` wrapper or the original stream.
 
 ## write_cache
 
-[[find in source code]](../../blackt/__init__.py#L6884)
+[[find in source code]](../../blackt/__init__.py#L6913)
 
 ```python
 def write_cache(cache: Cache, sources: Iterable[Path], mode: Mode) -> None:
