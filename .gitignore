@@ -1,5 +1,5 @@
 requirements_optional.txt
-upstream.py
+*.prof
 
 # DepHell stuff
 poetry.lock

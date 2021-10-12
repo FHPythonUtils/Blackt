@@ -1,18 +1,15 @@
 [tool.poetry]
 name = "blackt"
-version = "2021a5"
+license = "mit"
+version = "2021"
 description = ""
 authors = ["FredHappyface"]
 classifiers = [
 	"Development Status :: 5 - Production/Stable",
 	"Intended Audience :: Developers",
 	"Intended Audience :: Education",
-	"License :: OSI Approved :: MIT License",
 	"Natural Language :: English",
 	"Operating System :: OS Independent",
-	"Programming Language :: Python :: 3.7",
-	"Programming Language :: Python :: 3.8",
-	"Programming Language :: Python :: 3.9",
 	"Programming Language :: Python :: Implementation :: CPython",
 	"Topic :: Software Development :: Libraries :: Python Modules",
 	"Topic :: Utilities"
@@ -23,21 +20,42 @@ documentation = "https://github.com/FHPythonUtils/blackt/blob/master/README.md"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">3.6"
-appdirs = "<2,>=1.4.4"
-click = "<9,>=8.0.1"
-mypy-extensions = "<2,>=0.4.3"
-pathspec = "<2,>=0.8.1"
-regex = "<2023,>=2021.4.4"
-toml = "<2,>=0.10.2"
-typed-ast = "<2,>=1.4.2"
-typing-extensions = "<4,>=3.7.4"
-
-
+python = "^3.6.2"
+black = "<22,>=21.9b0"
 
 [tool.poetry.scripts]
-blackt = 'blackt:patched_main'
+blackt = 'blackt:main'
+
+[tool.pylint]
+[tool.pylint.basic]
+argument-naming-style = "camelCase"
+attr-naming-style = "camelCase"
+function-naming-style = "camelCase"
+method-naming-style = "camelCase"
+variable-naming-style = "camelCase"
+
+[tool.pylint.format]
+indent-string = "\t"
+
+[tool.pylint.master]
+ignore-patterns = "test_.*?py"
+
+[tool.pylint.messages_control]
+enable = ["F", "E", "W", "R", "C"]
+disable = ["pointless-string-statement", "superfluous-parens", "bad-continuation", "python3"]
+
+[tool.black]
+line-length = 100
+target-version = ["py37"]
+
+[tool.isort]
+profile = "black"
+indent = "Tab"
+
+[tool.pydocstyle]
+convention = "google"
+ignore = "D205,D415"
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,3 +1,5 @@
-from . import patched_main
+"""Call the main method when called like python3 -m blackt [args]"""
 
-patched_main()
+from . import main
+
+main()
