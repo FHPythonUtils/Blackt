@@ -38,7 +38,7 @@ def main():
 	for file in sourceFiles:
 		convertFile(file, "    ", "\t")
 
-	print(out)
+	print(out.encode("utf-8").decode("unicode_escape"))  # pylint: disable=no-member
 	sys.exit(exitCode)
 
 
@@ -74,7 +74,6 @@ def _doSysExec(command: str, errorAsOut: bool = True) -> tuple[int, str]:
 	"""
 	with subprocess.Popen(
 		command,
-		shell=True,
 		stdout=subprocess.PIPE,
 		stderr=subprocess.STDOUT if errorAsOut else subprocess.PIPE,
 		encoding="utf-8",

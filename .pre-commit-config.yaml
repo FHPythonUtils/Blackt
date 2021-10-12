@@ -1,4 +1,8 @@
 repos:
+  - repo: https://github.com/FHPythonUtils/Blackt
+    rev: '2021'
+    hooks:
+      - id: blackt
 
   - repo: https://github.com/pycqa/isort
     rev: 5.9.3

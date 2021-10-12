@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "blackt"
 license = "mit"
-version = "2021"
-description = ""
+version = "2021.0.1"
+description = "Black but with tabs"
 authors = ["FredHappyface"]
 classifiers = [
 	"Development Status :: 5 - Production/Stable",
