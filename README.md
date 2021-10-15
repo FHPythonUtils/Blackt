@@ -230,7 +230,6 @@ version.
 
 ## Download Project
 
-
 ### Clone
 #### Using The Command Line
 

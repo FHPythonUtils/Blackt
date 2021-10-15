@@ -12,14 +12,14 @@ patch-level version changes can be found in [commit messages](../../commits/mast
 - Now available as a pre-commit hook
 - updated pyproject.toml
 
-## 2021a5 - 30/05/2021
+## 2021a5 - 2021/05/30
 
 - Update click
 
-## 2021a4 - 22/04/2021
+## 2021a4 - 2021/04/22
 
 - Based on https://github.com/psf/black/tree/7b4ca4bd90c148d72548048f5109537a555aaf77
 
-## 2021a__ - 07/04/2021
+## 2021a__ - 2021/04/07
 
 - Alpha releases
