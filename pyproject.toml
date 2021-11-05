@@ -26,7 +26,6 @@ black = "<22,>=21.9b0"
 [tool.poetry.scripts]
 blackt = 'blackt:main'
 
-[tool.pylint]
 [tool.pylint.basic]
 argument-naming-style = "camelCase"
 attr-naming-style = "camelCase"
@@ -42,7 +41,12 @@ ignore-patterns = "test_.*?py"
 
 [tool.pylint.messages_control]
 enable = ["F", "E", "W", "R", "C"]
-disable = ["pointless-string-statement", "superfluous-parens", "bad-continuation", "python3"]
+disable = [
+	"pointless-string-statement",
+	"superfluous-parens",
+	"bad-continuation",
+	"python3"
+]
 
 [tool.black]
 line-length = 100
