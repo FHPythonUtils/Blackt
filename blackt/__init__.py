@@ -1,5 +1,7 @@
 """Provides the wrapper methods to black. Requires black to be on the system path"""
 
+from __future__ import annotations
+
 import argparse
 import os
 import re
