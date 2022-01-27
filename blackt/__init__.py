@@ -20,7 +20,7 @@ def main():
 
 	args, unknown = parser.parse_known_args()
 	if len(args.__dict__) + len(unknown) == 0 or "help" in args.__dict__:
-		print((THISDIR / "doc.txt").read_text(encoding="utf-8"))
+		print(_doSysExec("black --help")[1])
 		sys.exit(0)
 
 	sourceFiles = []

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "blackt"
 license = "mit"
-version = "2021.0.2"
+version = "2022"
 description = "Black but with tabs"
 authors = ["FredHappyface"]
 classifiers = [
@@ -21,10 +21,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6.2"
-black = "<22,>=21.9b0"
+black = "<22,>=21.12b0"
 
 [tool.poetry.scripts]
 blackt = 'blackt:main'
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
 
 [tool.pylint.basic]
 argument-naming-style = "camelCase"
