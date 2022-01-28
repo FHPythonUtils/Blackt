@@ -40,7 +40,10 @@ def main():
 	for file in sourceFiles:
 		convertFile(file, "    ", "\t")
 
-	print(out.encode("utf-8").decode("unicode_escape"))  # pylint: disable=no-member
+	try:
+		print(out.encode("utf-8").decode("unicode_escape"))  # pylint: disable=no-member
+	except UnicodeEncodeError:  # thrown in pre-commit
+		print(out)
 	sys.exit(exitCode)
 
 

@@ -5,26 +5,26 @@ repos:
       - id: blackt
 
   - repo: https://github.com/pycqa/isort
-    rev: 5.9.3
+    rev: 5.10.1
     hooks:
       - id: isort
 
   - repo: https://github.com/pycqa/pylint
-    rev: v2.11.1
+    rev: v2.12.2
     hooks:
       - id: pylint
         args: [--disable=import-error,--jobs=0, --fail-under=9.8, --ignore-patterns=test.*?py]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: trailing-whitespace
-        exclude: "tests/data/"
+        exclude: "tests/"
       - id: end-of-file-fixer
-        exclude: "tests/data/"
+        exclude: "tests/"
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.29.0
+    rev: v2.31.0
     hooks:
       - id: pyupgrade
         args: [--py37-plus]
@@ -32,12 +32,12 @@ repos:
     rev: v1.0.0
     hooks:
       - id: optimize-avif
-        exclude: "tests/data/"
+        exclude: "tests/"
       - id: optimize-jpg
-        exclude: "tests/data/"
+        exclude: "tests/"
       - id: optimize-png
-        exclude: "tests/data/"
+        exclude: "tests/"
       - id: optimize-svg
-        exclude: "tests/data/"
+        exclude: "tests/"
       - id: optimize-webp
-        exclude: "tests/data/"
+        exclude: "tests/"

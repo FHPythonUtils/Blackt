@@ -12,7 +12,7 @@ Provides the wrapper methods to black. Requires black to be on the system path
 
 ## convertFile
 
-[[find in source code]](../../blackt/__init__.py#L47)
+[[find in source code]](../../blackt/__init__.py#L50)
 
 ```python
 def convertFile(file: str, find: str, replace: str):
