@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/FHPythonUtils/Blackt
-    rev: '2021'
+    rev: '2022.0.1'
     hooks:
       - id: blackt
 
