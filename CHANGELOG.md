@@ -7,7 +7,6 @@ patch-level version changes can be found in [commit messages](../../commits/mast
 
 - Fix `UnicodeEncodeError` thrown in pre-commit
 
-
 ## 2022 - 2022/01/27
 
 - Update deps
