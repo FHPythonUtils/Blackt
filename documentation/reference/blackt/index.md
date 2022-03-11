@@ -1,18 +1,18 @@
-# blackt
+# Blackt
 
-> Auto-generated documentation for [blackt](../../blackt/__init__.py) module.
+> Auto-generated documentation for [blackt](../../../blackt/__init__.py) module.
 
 Provides the wrapper methods to black. Requires black to be on the system path
 
-- [Blackt](../README.md#blackt-index) / [Modules](../README.md#blackt-modules) / blackt
+- [Blackt](../README.md#blackt-index) / [Modules](../MODULES.md#blackt-modules) / Blackt
     - [convertFile](#convertfile)
     - [main](#main)
     - Modules
-        - [\_\_main\_\_](module.md#__main__)
+        - [Module](module.md#module)
 
 ## convertFile
 
-[[find in source code]](../../blackt/__init__.py#L50)
+[[find in source code]](../../../blackt/__init__.py#L50)
 
 ```python
 def convertFile(file: str, find: str, replace: str):
@@ -28,7 +28,7 @@ Convert spaces to tabs of vice versa
 
 ## main
 
-[[find in source code]](../../blackt/__init__.py#L16)
+[[find in source code]](../../../blackt/__init__.py#L16)
 
 ```python
 def main():
