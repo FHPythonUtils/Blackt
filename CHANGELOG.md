@@ -3,6 +3,11 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2022.0.2 - 2022/04/06
+
+- Fix `UnicodeError` thrown in pre-commit
+- Update black to fix https://github.com/psf/black/issues/2964
+
 ## 2022.0.1 - 2022/01/28
 
 - Fix `UnicodeEncodeError` thrown in pre-commit

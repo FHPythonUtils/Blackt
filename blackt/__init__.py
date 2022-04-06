@@ -42,7 +42,7 @@ def main():
 
 	try:
 		print(out.encode("utf-8").decode("unicode_escape"))  # pylint: disable=no-member
-	except UnicodeEncodeError:  # thrown in pre-commit
+	except UnicodeError:  # thrown in pre-commit
 		print(out)
 	sys.exit(exitCode)
 
