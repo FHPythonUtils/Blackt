@@ -12,7 +12,7 @@ Provides the wrapper methods to black. Requires black to be on the system path
 
 ## convertFile
 
-[[find in source code]](../../../blackt/__init__.py#L50)
+[[find in source code]](../../../blackt/__init__.py#L70)
 
 ```python
 def convertFile(file: str, find: str, replace: str):
@@ -28,7 +28,7 @@ Convert spaces to tabs of vice versa
 
 ## main
 
-[[find in source code]](../../../blackt/__init__.py#L16)
+[[find in source code]](../../../blackt/__init__.py#L34)
 
 ```python
 def main():

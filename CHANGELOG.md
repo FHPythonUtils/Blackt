@@ -3,6 +3,11 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2022.0.3 - 2022/04/11
+
+- Fix https://github.com/FHPythonUtils/Blackt/issues/1
+- Update dev deps
+
 ## 2022.0.2 - 2022/04/06
 
 - Fix `UnicodeError` thrown in pre-commit

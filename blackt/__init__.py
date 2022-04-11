@@ -12,6 +12,24 @@ from pathlib import Path
 
 THISDIR = Path(__file__).resolve().parent
 
+EXCLUDED = [
+	".env/",
+	".venv/",
+	"env/",
+	"venv/",
+	"ENV/",
+	"env.bak/",
+	"venv.bak/",
+	".svn/",
+	"CVS/",
+	".bzr/",
+	".hg/",
+	".git/",
+	"__pycache__/",
+	".tox/",
+	".eggs/",
+]
+
 
 def main():
 	"""Main entry point"""
@@ -27,7 +45,9 @@ def main():
 	for root, _dirs, files in os.walk("."):
 		for file in files:
 			if file.endswith(".py") or file.endswith(".pyi") or file.endswith(".ipynb"):
-				sourceFiles.append(os.path.join(root, file))
+				path = os.path.join(root, file).replace("\\", "/")
+				if not any(x in path for x in EXCLUDED):
+					sourceFiles.append(path)
 
 	# Convert tabs to spaces
 	for file in sourceFiles:
