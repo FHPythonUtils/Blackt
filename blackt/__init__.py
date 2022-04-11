@@ -31,7 +31,7 @@ EXCLUDED = [
 ]
 
 
-def main():
+def main():  # pragma: no cover
 	"""Main entry point"""
 	parser = ArgumentParser(add_help=False)
 	parser.add_argument("-h", "--help", action="store_true", default=argparse.SUPPRESS)
@@ -109,5 +109,5 @@ def _doSysExec(command: str, errorAsOut: bool = True) -> tuple[int, str]:
 		return exitCode, out
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
 	main()

@@ -3,7 +3,7 @@ from tempfile import NamedTemporaryFile
 
 THISDIR = str(Path(__file__).resolve().parent)
 
-from blackt import convertFile
+from blackt import _doSysExec, convertFile
 
 
 def test_convertFile_toTabs():
@@ -26,3 +26,7 @@ def test_convertFile_toSpaces():
 		assert Path(file.name).read_text(encoding="utf-8") == Path(
 			f"{THISDIR}/data/spaces.txt"
 		).read_text(encoding="utf-8")
+
+
+def test_shell():
+	assert _doSysExec("black --help")[0] == 0
