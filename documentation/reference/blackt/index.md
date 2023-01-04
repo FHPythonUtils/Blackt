@@ -1,22 +1,18 @@
 # Blackt
 
+[Blackt Index](../README.md#blackt-index) /
+Blackt
+
 > Auto-generated documentation for [blackt](../../../blackt/__init__.py) module.
 
-Provides the wrapper methods to black. Requires black to be on the system path
-
-- [Blackt](../README.md#blackt-index) / [Modules](../MODULES.md#blackt-modules) / Blackt
-    - [convertFile](#convertfile)
-    - [main](#main)
-    - Modules
-        - [Module](module.md#module)
+- [Blackt](#blackt)
+  - [convertFile](#convertfile)
+  - [main](#main)
+  - [Modules](#modules)
 
 ## convertFile
 
-[[find in source code]](../../../blackt/__init__.py#L70)
-
-```python
-def convertFile(file: str, find: str, replace: str):
-```
+[Show source in __init__.py:70](../../../blackt/__init__.py#L70)
 
 Convert spaces to tabs of vice versa
 
@@ -26,12 +22,30 @@ Convert spaces to tabs of vice versa
 - `find` *str* - tabs/ spaces to find
 - `replace` *str* - tabs/ spaces to replace
 
+#### Signature
+
+```python
+def convertFile(file: str, find: str, replace: str):
+    ...
+```
+
+
+
 ## main
 
-[[find in source code]](../../../blackt/__init__.py#L34)
+[Show source in __init__.py:34](../../../blackt/__init__.py#L34)
+
+Main entry point
+
+#### Signature
 
 ```python
 def main():
+    ...
 ```
 
-Main entry point
+
+
+## Modules
+
+- [Module](./module.md)

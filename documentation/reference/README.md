@@ -1,9 +1,8 @@
-# Blackt Modules
+# Blackt Index
 
-> Auto-generated documentation modules index.
+> Auto-generated documentation index.
 
-Full list of [Blackt](README.md#blackt-index) project modules.
+A full list of `Blackt` project modules.
 
-- [Blackt Index](README.md#blackt-index)
 - [Blackt](blackt/index.md#blackt)
     - [Module](blackt/module.md#module)
