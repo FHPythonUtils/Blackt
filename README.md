@@ -13,9 +13,36 @@
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
-Black but with tabs
+Black (https://github.com/psf/black/) but with tabs
 
-https://github.com/psf/black/
+**Note:** you may wish to consider https://github.com/jsh9/cercis
+
+Here are the configuration options to fall back to Blackt's behavior. Put them in
+`pyproject.toml`:
+
+```toml
+[tool.cercis]
+line-length = 88
+single-quote = false
+use-tabs = true
+function-definition-extra-indent = false
+other-line-continuation-extra-indent = false
+closing-bracket-extra-indent = false
+wrap-line-with-long-string = true
+collapse-nested-brackets = false
+wrap-comments = true
+wrap-pragma-comments = true
+```
+
+Here is a more opinionated example
+
+```toml
+[tool.cercis]
+line-length = 120
+single-quote = false
+use-tabs = true
+target-version = ["py38"]
+```
 
 - [Using (snippet from upstream)](#using-snippet-from-upstream)
 	- [Command line options](#command-line-options)
