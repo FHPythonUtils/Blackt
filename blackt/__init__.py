@@ -41,30 +41,40 @@ def main():  # pragma: no cover
 		print(_doSysExec("black --help")[1])
 		sys.exit(0)
 
-	sourceFiles = []
-	for root, _dirs, files in os.walk("."):
-		for file in files:
-			if file.endswith(".py") or file.endswith(".pyi") or file.endswith(".ipynb"):
-				path = os.path.join(root, file).replace("\\", "/")
-				if not any(x in path for x in EXCLUDED):
-					sourceFiles.append(path)
+	sourceFiles = findSourceFiles()
 
-	# Convert tabs to spaces
-	for file in sourceFiles:
-		convertFile(file, "\t", "    ")
+	convertTabsToSpaces(sourceFiles, "\t", "    ")
 
-	# Run black with forwarded args
-	exitCode, out = _doSysExec("black " + " ".join(unknown))
+	exitCode: int
+	out: str
+	exitCode, out = runBlack(unknown)
 
-	# Convert spaces to tabs
-	for file in sourceFiles:
-		convertFile(file, "    ", "\t")
+	convertSpacesToTabs(sourceFiles, "    ", "\t")
 
-	try:
-		print(out.encode("utf-8").decode("unicode_escape"))  # pylint: disable=no-member
-	except UnicodeError:  # thrown in pre-commit
-		print(out)
+	printOutput(out)
 	sys.exit(exitCode)
+
+
+def findSourceFiles() -> list[str]:
+	"""Find source files to process"""
+	sourceFiles = []
+	for root, _, files in os.walk("."):
+		for file in files:
+			if file.endswith((".py", ".pyi", ".ipynb")) and not any(x in file for x in EXCLUDED):
+				sourceFiles.append(os.path.join(root, file).replace("\\", "/"))
+	return sourceFiles
+
+
+def convertTabsToSpaces(files: list[str], find: str, replace: str):
+	"""Convert tabs to spaces"""
+	for file in files:
+		convertFile(file, find, replace)
+
+
+def convertSpacesToTabs(files: list[str], find: str, replace: str):
+	"""Convert spaces to tabs"""
+	for file in files:
+		convertFile(file, find, replace)
 
 
 def convertFile(file: str, find: str, replace: str):
@@ -84,15 +94,25 @@ def convertFile(file: str, find: str, replace: str):
 	Path(file).write_text("\n".join(outLines), encoding="utf-8")
 
 
+def runBlack(unknown: list[str]) -> tuple[int, str]:
+	"""Run black with forwarded args"""
+	return _doSysExec("black " + " ".join(unknown))
+
+
+def printOutput(out: str):
+	"""Print the output"""
+	try:
+		print(out.encode("utf-8").decode("unicode_escape"))
+	except UnicodeError:
+		print(out)
+
+
 def _doSysExec(command: str, errorAsOut: bool = True) -> tuple[int, str]:
 	"""Execute a command and check for errors.
 
 	Args:
 		command (str): commands as a string
 		errorAsOut (bool, optional): redirect errors to stdout
-
-	Raises:
-		RuntimeWarning: throw a warning should there be a non exit code
 
 	Returns:
 		tuple[int, str]: tuple of return code (int) and stdout (str)

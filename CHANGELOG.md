@@ -3,6 +3,10 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2023 - 2023/08/28
+
+- Minor code improvements
+
 ## 2022.0.3 - 2022/04/11
 
 - Fix https://github.com/FHPythonUtils/Blackt/issues/1
