@@ -1,12 +1,11 @@
-[![GitHub top language](https://img.shields.io/github/languages/top/FHPythonUtils/blackt.svg?style=for-the-badge)](../../)
-[![Repository size](https://img.shields.io/github/repo-size/FHPythonUtils/blackt.svg?style=for-the-badge)](../../)
-[![Issues](https://img.shields.io/github/issues/FHPythonUtils/blackt.svg?style=for-the-badge)](../../issues)
-[![License](https://img.shields.io/github/license/FHPythonUtils/blackt.svg?style=for-the-badge)](/LICENSE.md)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPythonUtils/blackt.svg?style=for-the-badge)](../../commits/master)
-[![Last commit](https://img.shields.io/github/last-commit/FHPythonUtils/blackt.svg?style=for-the-badge)](../../commits/master)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/blackt.svg?style=for-the-badge)](https://pypistats.org/packages/blackt)
-[![PyPI Total Downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=total%20downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fblackt)](https://pepy.tech/project/blackt)
-[![PyPI Version](https://img.shields.io/pypi/v/blackt.svg?style=for-the-badge)](https://pypi.org/project/blackt)
+[![GitHub top language](https://img.shields.io/github/languages/top/FHPythonUtils/blackt.svg?style=for-the-badge&cacheSeconds=28800)](../../)
+[![Issues](https://img.shields.io/github/issues/FHPythonUtils/blackt.svg?style=for-the-badge&cacheSeconds=28800)](../../issues)
+[![License](https://img.shields.io/github/license/FHPythonUtils/blackt.svg?style=for-the-badge&cacheSeconds=28800)](/LICENSE.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPythonUtils/blackt.svg?style=for-the-badge&cacheSeconds=28800)](../../commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/FHPythonUtils/blackt.svg?style=for-the-badge&cacheSeconds=28800)](../../commits/master)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/blackt.svg?style=for-the-badge&cacheSeconds=28800)](https://pypistats.org/packages/blackt)
+[![PyPI Total Downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=total%20downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi%2Epepy%2Etech%2Fapi%2Fv2%2Fprojects%2Fblackt)](https://pepy.tech/project/blackt)
+[![PyPI Version](https://img.shields.io/pypi/v/blackt.svg?style=for-the-badge&cacheSeconds=28800)](https://pypi.org/project/blackt)
 
 <!-- omit in toc -->
 # BlackT
