@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "blackt"
 license = "mit"
-version = "2023"
+version = "2023.1"
 description = "Black but with tabs"
 authors = ["FredHappyface"]
 classifiers = [
@@ -20,18 +20,20 @@ documentation = "https://github.com/FHPythonUtils/blackt/blob/master/README.md"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-black = "<23,>=22.3.0"
+python = ">=3.8,<4.0"
+black = "<24,>=23.7.0"
 
 [tool.poetry.scripts]
 blackt = 'blackt:main'
 
-[tool.poetry.dev-dependencies]
-pytest = "^7.1.1"
-coverage = "^6.3.2"
-pylint = "^2.13.5"
-handsdown = "^1.1.0"
 
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pylint = "^2.17.5"
+handsdown = "^2.0.1"
+coverage = "^7.3.0"
 
 [tool.black]
 line-length = 100
