@@ -30,8 +30,7 @@ Convert spaces to tabs of vice versa
 #### Signature
 
 ```python
-def convertFile(file: str, find: str, replace: str):
-    ...
+def convertFile(file: str, find: str, replace: str): ...
 ```
 
 
@@ -45,8 +44,7 @@ Convert spaces to tabs
 #### Signature
 
 ```python
-def convertSpacesToTabs(files: list[str], find: str, replace: str):
-    ...
+def convertSpacesToTabs(files: list[str], find: str, replace: str): ...
 ```
 
 
@@ -60,8 +58,7 @@ Convert tabs to spaces
 #### Signature
 
 ```python
-def convertTabsToSpaces(files: list[str], find: str, replace: str):
-    ...
+def convertTabsToSpaces(files: list[str], find: str, replace: str): ...
 ```
 
 
@@ -75,8 +72,7 @@ Find source files to process
 #### Signature
 
 ```python
-def findSourceFiles() -> list[str]:
-    ...
+def findSourceFiles() -> list[str]: ...
 ```
 
 
@@ -90,8 +86,7 @@ Main entry point
 #### Signature
 
 ```python
-def main():
-    ...
+def main(): ...
 ```
 
 
@@ -105,8 +100,7 @@ Print the output
 #### Signature
 
 ```python
-def printOutput(out: str):
-    ...
+def printOutput(out: str): ...
 ```
 
 
@@ -120,8 +114,7 @@ Run black with forwarded args
 #### Signature
 
 ```python
-def runBlack(unknown: list[str]) -> tuple[int, str]:
-    ...
+def runBlack(unknown: list[str]) -> tuple[int, str]: ...
 ```
 
 
