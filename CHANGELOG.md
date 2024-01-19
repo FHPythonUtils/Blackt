@@ -3,6 +3,10 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2024.0.1 - 2024/01/19
+
+- fix: preserve line endings
+
 ## 2024 - 2024/01/07
 
 - update dependencies

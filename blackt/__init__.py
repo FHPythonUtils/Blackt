@@ -78,20 +78,26 @@ def convertSpacesToTabs(files: list[str], find: str, replace: str):
 
 
 def convertFile(file: str, find: str, replace: str):
-	"""Convert spaces to tabs of vice versa
+	"""Convert spaces to tabs or vice versa.
 
 	Args:
 		file (str): file to modify
 		find (str): tabs/ spaces to find
 		replace (str): tabs/ spaces to replace
 	"""
-	lines = Path(file).read_text(encoding="utf-8").split("\n")
-	outLines = []
-	for line in lines:
-		match = re.match(f"^({find})*", line)
-		span = match.span()
-		outLines.append(replace * (span[1] // len(find)) + line[span[1] :])
-	Path(file).write_text("\n".join(outLines), encoding="utf-8")
+	file_path = Path(file)
+
+	with file_path.open(encoding="utf-8", newline="") as fp:
+		out_lines = []
+
+		pattern = re.compile(f"^({find})*")
+
+		for line in fp.read().splitlines(keepends=True):
+			match = pattern.match(line)
+			span = match.span()  # type:ignore[reportOptionalMemberAccess]
+			out_lines.append(replace * (span[1] // len(find)) + line[span[1] :])
+
+		file_path.write_text("".join(out_lines), encoding="utf-8", newline="")
 
 
 def runBlack(unknown: list[str]) -> tuple[int, str]:

@@ -1,11 +1,11 @@
 # Blackt
 
-[Blackt Index](../README.md#blackt-index) /
-Blackt
+[Blackt Index](../README.md#blackt-index) / Blackt
 
 > Auto-generated documentation for [blackt](../../../blackt/__init__.py) module.
 
 - [Blackt](#blackt)
+  - [_doSysExec](#_dosysexec)
   - [convertFile](#convertfile)
   - [convertSpacesToTabs](#convertspacestotabs)
   - [convertTabsToSpaces](#converttabstospaces)
@@ -15,11 +15,34 @@ Blackt
   - [runBlack](#runblack)
   - [Modules](#modules)
 
+## _doSysExec
+
+[Show source in __init__.py:116](../../../blackt/__init__.py#L116)
+
+Execute a command and check for errors.
+
+#### Arguments
+
+- `command` *str* - commands as a string
+- `errorAsOut` *bool, optional* - redirect errors to stdout
+
+#### Returns
+
+- `tuple[int,` *str]* - tuple of return code (int) and stdout (str)
+
+#### Signature
+
+```python
+def _doSysExec(command: str, errorAsOut: bool = True) -> tuple[int, str]: ...
+```
+
+
+
 ## convertFile
 
 [Show source in __init__.py:80](../../../blackt/__init__.py#L80)
 
-Convert spaces to tabs of vice versa
+Convert spaces to tabs or vice versa.
 
 #### Arguments
 
@@ -93,7 +116,7 @@ def main(): ...
 
 ## printOutput
 
-[Show source in __init__.py:102](../../../blackt/__init__.py#L102)
+[Show source in __init__.py:108](../../../blackt/__init__.py#L108)
 
 Print the output
 
@@ -107,7 +130,7 @@ def printOutput(out: str): ...
 
 ## runBlack
 
-[Show source in __init__.py:97](../../../blackt/__init__.py#L97)
+[Show source in __init__.py:103](../../../blackt/__init__.py#L103)
 
 Run black with forwarded args
 
