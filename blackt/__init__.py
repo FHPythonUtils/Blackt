@@ -85,6 +85,7 @@ def convertFile(file: Path, find: str, replace: str) -> None:
 		file (str): file to modify
 		find (str): tabs/ spaces to find
 		replace (str): tabs/ spaces to replace
+
 	"""
 
 	with file.open(encoding="utf-8", newline="") as fp:
@@ -124,6 +125,7 @@ def _doSysExec(command: str, *, errorAsOut: bool = True) -> tuple[int, str]:
 	Returns:
 	-------
 		tuple[int, str]: tuple of return code (int) and stdout (str)
+
 	"""
 	with subprocess.Popen(
 		command,

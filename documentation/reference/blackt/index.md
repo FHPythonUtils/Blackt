@@ -23,12 +23,14 @@ Execute a command and check for errors.
 
 #### Arguments
 
-- `command` *str* - commands as a string
-- `errorAsOut` *bool, optional* - redirect errors to stdout
+----
+ - `command` *str* - commands as a string
+ - `errorAsOut` *bool, optional* - redirect errors to stdout
 
 #### Returns
 
-- `tuple[int,` *str]* - tuple of return code (int) and stdout (str)
+-------
+ - `tuple[int,` *str]* - tuple of return code (int) and stdout (str)
 
 #### Signature
 
@@ -46,14 +48,15 @@ Convert spaces to tabs or vice versa.
 
 #### Arguments
 
-- `file` *str* - file to modify
-- `find` *str* - tabs/ spaces to find
-- `replace` *str* - tabs/ spaces to replace
+----
+ - `file` *str* - file to modify
+ - `find` *str* - tabs/ spaces to find
+ - `replace` *str* - tabs/ spaces to replace
 
 #### Signature
 
 ```python
-def convertFile(file: str, find: str, replace: str): ...
+def convertFile(file: Path, find: str, replace: str) -> None: ...
 ```
 
 
@@ -62,12 +65,12 @@ def convertFile(file: str, find: str, replace: str): ...
 
 [Show source in __init__.py:74](../../../blackt/__init__.py#L74)
 
-Convert spaces to tabs
+Convert spaces to tabs.
 
 #### Signature
 
 ```python
-def convertSpacesToTabs(files: list[str], find: str, replace: str): ...
+def convertSpacesToTabs(files: list[Path], find: str, replace: str) -> None: ...
 ```
 
 
@@ -76,12 +79,12 @@ def convertSpacesToTabs(files: list[str], find: str, replace: str): ...
 
 [Show source in __init__.py:68](../../../blackt/__init__.py#L68)
 
-Convert tabs to spaces
+Convert tabs to spaces.
 
 #### Signature
 
 ```python
-def convertTabsToSpaces(files: list[str], find: str, replace: str): ...
+def convertTabsToSpaces(files: list[Path], find: str, replace: str) -> None: ...
 ```
 
 
@@ -90,12 +93,12 @@ def convertTabsToSpaces(files: list[str], find: str, replace: str): ...
 
 [Show source in __init__.py:58](../../../blackt/__init__.py#L58)
 
-Find source files to process
+Find source files to process.
 
 #### Signature
 
 ```python
-def findSourceFiles() -> list[str]: ...
+def findSourceFiles() -> list[Path]: ...
 ```
 
 
@@ -104,12 +107,12 @@ def findSourceFiles() -> list[str]: ...
 
 [Show source in __init__.py:34](../../../blackt/__init__.py#L34)
 
-Main entry point
+Establish the main entry point.
 
 #### Signature
 
 ```python
-def main(): ...
+def main() -> None: ...
 ```
 
 
@@ -118,12 +121,12 @@ def main(): ...
 
 [Show source in __init__.py:108](../../../blackt/__init__.py#L108)
 
-Print the output
+Print the output.
 
 #### Signature
 
 ```python
-def printOutput(out: str): ...
+def printOutput(out: str) -> None: ...
 ```
 
 
@@ -132,7 +135,7 @@ def printOutput(out: str): ...
 
 [Show source in __init__.py:103](../../../blackt/__init__.py#L103)
 
-Run black with forwarded args
+Run black with forwarded args.
 
 #### Signature
 
