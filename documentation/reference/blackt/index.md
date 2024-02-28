@@ -17,7 +17,7 @@
 
 ## _doSysExec
 
-[Show source in __init__.py:116](../../../blackt/__init__.py#L116)
+[Show source in __init__.py:117](../../../blackt/__init__.py#L117)
 
 Execute a command and check for errors.
 
@@ -119,7 +119,7 @@ def main() -> None: ...
 
 ## printOutput
 
-[Show source in __init__.py:108](../../../blackt/__init__.py#L108)
+[Show source in __init__.py:109](../../../blackt/__init__.py#L109)
 
 Print the output.
 
@@ -133,7 +133,7 @@ def printOutput(out: str) -> None: ...
 
 ## runBlack
 
-[Show source in __init__.py:103](../../../blackt/__init__.py#L103)
+[Show source in __init__.py:104](../../../blackt/__init__.py#L104)
 
 Run black with forwarded args.
 
