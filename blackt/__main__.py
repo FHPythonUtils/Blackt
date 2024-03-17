@@ -2,6 +2,6 @@
 
 from __future__ import annotations
 
-from . import main
+from blackt import main
 
 main()
