@@ -8,8 +8,8 @@ from blackt import _doSysExec, convertFile
 
 def aux_testConvertFile(sourceFile: str, destFile: str, find: str, replace: str) -> None:
 	with (
-		NamedTemporaryFile(mode="w", suffix=".txt", delete=False, newline="") as tmp,
-		Path(sourceFile).open(encoding="utf-8", newline="") as src,
+		NamedTemporaryFile(mode="w", suffix=".txt", delete=False, newline="") as tmp,\
+		Path(sourceFile).open(encoding="utf-8", newline="") as src,\
 		Path(destFile).open(encoding="utf-8", newline="") as dst,
 	):
 		tempFile = Path(tmp.name)
