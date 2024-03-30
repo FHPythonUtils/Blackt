@@ -3,6 +3,10 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2024.0.2 - 2024/03/30
+
+- now requires python >= 3.10
+
 ## 2024.0.1 - 2024/01/19
 
 - fix: preserve line endings

@@ -13,9 +13,9 @@ def aux_testConvertFile(sourceFile: str, destFile: str, find: str, replace: str)
 		Path(destFile).open(encoding="utf-8", newline="") as dst,
 	):
 		tempFile = Path(tmp.name)
-		tempFile.write_text(src.read(), encoding="utf-8")
+		tempFile.write_text(src.read(), encoding="utf-8", newline="")
 		convertFile(tempFile, find, replace)
-		tempFileContents = tempFile.open(encoding="utf-8").read()
+		tempFileContents = tempFile.open(encoding="utf-8", newline="").read()
 		assert "\r" not in tempFileContents
 		assert tempFileContents == dst.read()
 
