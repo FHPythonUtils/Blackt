@@ -128,7 +128,7 @@ def _doSysExec(command: str, *, errorAsOut: bool = True) -> tuple[int, str]:
 
 	"""
 	with subprocess.Popen(
-		command,
+		command.split(),
 		stdout=subprocess.PIPE,
 		stderr=subprocess.STDOUT if errorAsOut else subprocess.PIPE,
 		encoding="utf-8",
